@@ -1,2 +1,3 @@
-# iknow-santiment-analysis
-General approach to build santiment analysis projects with InterSystems iKnow
+# iKRA
+InterSystems iKnow Reviews Analyzer
+General approach to build santiment review analysis projects with InterSystems iKnow
