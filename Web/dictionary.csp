@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+	<meta charset="UTF-8">
+	
+	<title>Редактор словарей</title>
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js"></script>
+	
+	<script type="text/javascript" src="js/model.js"></script>
+	
+</head>
+
+<body ng-app="app" ng-controller="ctrl">
+
+	<!-- Меню страницы -->
+	<div class="container" align="center">
+        <h1>Редактор словарей</h1>
+        <div class="navbar navbar-inverse row" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse" style="height: 1px;">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="" class="dropdown-toggle" data-toggle="dropdown">Функциональный словарь<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#/category">Добавить категорию</a></li>
+                                <li><a href="#/concept">Добавить концепт</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#/emotion">Эмоциональный словарь</a></li>
+                        <li><a href="#/upload">Загрузить</a></li>
+                        <li class="dropdown">
+                            <a href="" class="dropdown-toggle" data-toggle="dropdown">Сохранить<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li ng-click="downloadFile('F');"><a>Функциональный словарь</a></li>
+                                <li ng-click="downloadFile('E');"><a>Эмоциональный словарь</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<div ng-view></div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    
+</body>
+
+
+</html>

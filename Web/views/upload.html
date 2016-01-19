@@ -1,0 +1,42 @@
+<div ng-controller="ctrl" ng-init="dictSelect = 'uplFunctional';">
+    <div class="container" align="center" style="border: solid gray 1px; border-radius: 10px; background-color: aliceblue; box-shadow: 0px 0px 3px 0px;">
+
+        <h2>Загрузка данных</h2>
+
+        <br>
+
+        <div class="row">
+            <form class="form-horizontal" role="form" ng-model="concept" ng-submit="uploadFile();">
+
+                <div class="form-group">
+                    <label class="col-xs-2 control-label">Добавить</label>
+                    <div class="col-xs-9 center-block">
+                        <select class="form-control" ng-model="dictSelect">
+                            <option value="uplFunctional">функциональный словарь</option>
+                            <option value="uplEmotion">эмоциональный словарь</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <table>
+                        <tr>
+                            <td>
+                                <input id="iduplfile" type="file" name="file"/>
+                            </td>
+                            <td>
+                                <button type="submit" class="btn btn-default">Загрузить</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div id="uplstat"></div>
+
+            </form>
+        </div>
+
+        <br>
+
+    </div>
+</div>
