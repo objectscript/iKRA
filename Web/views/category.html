@@ -1,0 +1,46 @@
+<div ng-controller="ctrl" ng-init="getCategories(); category.CtgName=''; ctgsbm='Добавить';">
+    <div class="container" align="center" style="border: solid gray 1px; border-radius: 10px; background-color: aliceblue; box-shadow: 0px 0px 3px 0px;">
+
+        <h2>Категории</h2>
+
+        <br>
+
+        <div class="row">
+            <form class="form-horizontal" role="form" ng-model="category" ng-submit="ctggo(category); category=''; category.CtgName='';">
+                <div class="form-group">
+                    <label class="col-xs-2 control-label">Категория</label>
+                    <div class="col-xs-8 center-block">
+                        <input type="text" class="form-control" ng-model="category.CtgName" placeholder="Введите название категории">
+                    </div>
+                    <div class="col-xs-1">
+                        <button type="submit" class="btn btn-default">{{ctgsbm}}</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
+                <table class="table table-striped table-condensed table-hover table-bordered">
+                    <tr ng-repeat="ctg in categories">
+                        <td>{{ctg.CtgName}}</td>
+                        <td style="width: 50px;">
+                            <button class="btn btn-success" ng-click="ctgedit(ctg);">
+                                <i class="glyphicon glyphicon-pencil"></i>
+                            </button>
+                        </td>
+                        <td style="width: 50px;">
+                            <button class="btn btn-danger" ng-click="ctgdelete(ctg);">
+                                <i class="glyphicon glyphicon-remove"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+                <br/>
+            </div>
+        </div>
+
+    </div>
+</div>

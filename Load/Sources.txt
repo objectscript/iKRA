@@ -1,0 +1,510 @@
+phone#1#iPhone 4S
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 01 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 02 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 03 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 04 (3).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 05 (4).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 06 (3).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 07 (4).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 08 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 09 (2).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 10 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 11 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 12 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 13 (4).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 14 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 15 (3).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 16 (3).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 17 (4).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 18 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 19 (3).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 20 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 21 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 22 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 23 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 24 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 25 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 26 (4).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 27 (2).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 28 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 29 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 30 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 31 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 32 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 33 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 34 (2).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 35 (4).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 36 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 37 (3).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 38 (4).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 39 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 40 (4).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 41 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 42 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 43 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 44 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 45 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 46 (4).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 47 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 48 (4).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 49 (2).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 4S\A_4S 50 (5).txt
+phone#2#iPhone 5S
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 01 (3).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 02 (3).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 03 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 04 (3).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 05 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 06 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 07 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 08 (1).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 09 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 10 (2).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 11 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 12 (3).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 13 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 14 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 15 (3).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 16 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 17 (1).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 18 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 19 (3).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 20 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 21 (2).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 22 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 23 (3).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 24 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 25 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 26 (3).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 27 (4).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 28 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 29 (4).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 30 (1).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 31 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 32 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 33 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 34 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 35 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 36 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 37 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 38 (1).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 39 (4).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 40 (4).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 41 (3).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 42 (4).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 43 (2).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 44 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 45 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 46 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 47 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 48 (5).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 49 (4).txt
+data#D:\intersystems\wPhones\Data\Apple\Apple iPhone 5S\A_5S 50 (3).txt
+phone#3#HTC One
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 01 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 02 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 03 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 04 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 05 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 06 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 07 (4).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 08 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 09 (2).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 10 (2).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 11 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 12 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 13 (4).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 14 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 15 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 16 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 17 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 18 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 19 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 20 (2).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 21 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 22 (4).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 23 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 24 (4).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 25 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 26 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 27 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 28 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 29 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 30 (1).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 31 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 32 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 33 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 34 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 35 (4).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 36 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 37 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 38 (4).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 39 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 40 (2).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 41 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 42 (4).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 43 (4).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 44 (4).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 45 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 46 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 47 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 48 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 49 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One\H_ONE 50 (1).txt
+phone#4#HTC One M8
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 01 (1).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 02 (4).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 03 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 04 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 05 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 06 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 07 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 08 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 09 (4).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 10 (1).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 11 (3).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 12 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 13 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 14 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 15 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 16 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 17 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 18 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 19 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 20 (2).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 21 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 22 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 23 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 24 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 25 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 26 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 27 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 28 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 29 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 30 (2).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 31 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 32 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 33 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 34 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 35 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 36 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 37 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 38 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 39 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 40 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 41 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 42 (4).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 43 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 44 (3).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 45 (3).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 46 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 47 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 48 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 49 (5).txt
+data#D:\intersystems\wPhones\Data\HTC\HTC One M8\H_ONEM8 50 (1).txt
+phone#5#LG G3 s D724
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 01 (3).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 02 (2).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 03 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 04 (4).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 05 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 06 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 07 (4).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 08 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 09 (4).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 10 (1).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 11 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 12 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 13 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 14 (4).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 15 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 16 (4).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 17 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 18 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 19 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 20 (2).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 21 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 22 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 23 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 24 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 25 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 26 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 27 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 28 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 29 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 30 (1).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 31 (4).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 32 (4).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 33 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 34 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 35 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 36 (4).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 37 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 38 (4).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 39 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 40 (1).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 41 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 42 (4).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 43 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 44 (3).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 45 (4).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 46 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 47 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 48 (4).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 49 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG G3 s D724\L_G3 50 (1).txt
+phone#6#LG Nexus 5
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 01 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 02 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 03 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 04 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 05 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 06 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 07 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 08 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 09 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 10 (2).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 11 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 12 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 13 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 14 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 15 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 16 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 17 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 18 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 19 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 20 (2).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 21 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 22 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 23 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 24 (3).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 25 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 26 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 27 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 28 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 29 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 30 (2).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 31 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 32 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 33 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 34 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 35 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 36 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 37 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 38 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 39 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 40 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 41 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 42 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 43 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 44 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 45 (4).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 46 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 47 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 48 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 49 (5).txt
+data#D:\intersystems\wPhones\Data\LG\LG Nexus 5\L_N5 50 (2).txt
+phone#7#Samsung Galaxy Alpha SM-G850F
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 01 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 02 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 03 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 04 (3).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 05 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 06 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 07 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 08 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 09 (2).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 10 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 11 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 12 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 13 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 14 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 15 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 16 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 17 (4).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 18 (2).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 19 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 20 (3).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 21 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 22 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 23 (4).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 24 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 25 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 26 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 27 (2).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 28 (4).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 29 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 30 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 31 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 32 (4).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 33 (4).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 34 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 35 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 36 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 37 (2).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 38 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 39 (4).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 40 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 41 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 42 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 43 (4).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 44 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 45 (4).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 46 (2).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 47 (4).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 48 (4).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 49 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy Alpha SM-G850F\ALPHA 50 (5).txt
+phone#8#Samsung Galaxy S5 SM-G900F
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 01 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 02 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 03 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 04 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 05 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 06 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 07 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 08 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 09 (1).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 10 (2).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 11 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 12 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 13 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 14 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 15 (4).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 16 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 17 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 18 (2).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 19 (2).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 20 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 21 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 22 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 23 (3).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 24 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 25 (4).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 26 (4).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 27 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 28 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 29 (2).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 30 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 31 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 32 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 33 (4).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 34 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 35 (2).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 36 (1).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 37 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 38 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 39 (4).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 40 (4).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 41 (3).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 42 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 43 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 44 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 45 (2).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 46 (3).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 47 (4).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 48 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 49 (5).txt
+data#D:\intersystems\wPhones\Data\Samsung\Samsung Galaxy S5 SM-G900F\SM_S5 50 (2).txt
+phone#9#Sony Xperia Z3 [D6603]
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 01 (3).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 02 (1).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 03 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 04 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 05 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 06 (4).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 07 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 08 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 09 (1).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 10 (2).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 11 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 12 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 13 (4).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 14 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 15 (4).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 16 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 17 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 18 (2).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 19 (1).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 20 (1).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 21 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 22 (4).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 23 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 24 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 25 (4).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 26 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 27 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 28 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 29 (2).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 30 (1).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 31 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 32 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 33 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 34 (4).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 35 (4).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 36 (4).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 37 (4).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 38 (1).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 39 (1).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 40 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 41 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 42 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 43 (3).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 44 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 45 (3).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 46 (4).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 47 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 48 (2).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 49 (2).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 [D6603]\SN_Z3 50 (3).txt
+phone#10#Sony Xperia Z3 Compact
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 01 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 02 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 03 (4).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 04 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 05 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 06 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 07 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 08 (4).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 09 (1).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 10 (1).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 11 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 12 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 13 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 14 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 15 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 16 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 17 (1).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 18 (2).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 19 (4).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 20 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 21 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 22 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 23 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 24 (3).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 25 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 26 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 27 (2).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 28 (2).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 29 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 30 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 31 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 32 (4).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 33 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 34 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 35 (3).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 36 (4).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 37 (1).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 38 (1).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 39 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 40 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 41 (4).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 42 (3).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 43 (4).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 44 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 45 (5).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 46 (3).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 47 (1).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 48 (2).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 49 (3).txt
+data#D:\intersystems\wPhones\Data\Sony\Sony Xperia Z3 Compact\SN_Z3CMP 50 (5).txt

@@ -1,0 +1,49 @@
+<div ng-controller="ctrl" ng-init="getEmotions(); emotion.EValue=1; emotion.EName=''; emtsbm='Добавить';">
+    <div class="container frm" align="center" style="border: solid gray 1px; border-radius: 10px; background-color: aliceblue; box-shadow: 0px 0px 3px 0px;">
+
+        <h2>Эмоциональные маркеры</h2>
+
+        <br>
+
+        <div class="row">
+            <form class="form-horizontal" role="form" ng-submit="emtgo(emotion); emotion=''; emotion.EValue=1; emotion.EName='';">
+                <div class="form-group">
+                    <label class="col-xs-1 col-xs-offset-1 control-label">Маркер</label>
+                    <div class="col-xs-1 center-block">
+                        <input type="number" class="form-control" ng-model="emotion.EValue" value="1" min="-1" max="1" step="2">
+                    </div>
+                    <div class="col-xs-7 center-block">
+                        <input type="emarker" class="form-control" ng-model="emotion.EName" placeholder="Введите наименование маркера">
+                    </div>
+                    <div class="col-xs-1">
+                        <button type="submit" class="btn btn-default">{{emtsbm}}</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
+                <table class="table table-striped table-condensed table-hover table-bordered">
+                    <tr ng-repeat="emt in emotions">
+                        <td>{{emt.EValue}}</td>
+                        <td>{{emt.EName}}</td>
+                        <td style="width: 50px;">
+                            <button class="btn btn-success" ng-click="emtedit(emt);">
+                                <i class="glyphicon glyphicon-pencil"></i>
+                            </button>
+                        </td>
+                        <td style="width: 50px;">
+                            <button class="btn btn-danger" ng-click="emtdelete(emt);">
+                                <i class="glyphicon glyphicon-remove"></i>
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<br>

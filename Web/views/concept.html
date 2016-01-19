@@ -1,0 +1,58 @@
+<div ng-controller="ctrl" ng-init="getCategories(); concept.FName=''; cncptsbm='Добавить';">
+    <div class="container" align="center" style="border: solid gray 1px; border-radius: 10px; background-color: aliceblue; box-shadow: 0px 0px 3px 0px;">
+
+        <h2>Концепты</h2>
+
+        <br>
+
+        <div class="row">
+            <form class="form-horizontal" role="form" ng-model="concept" ng-submit="concept.CtgID=ctgSelect; cncptgo(concept); concept=''; concept.FName='';">
+                <div class="form-group">
+                    <label class="col-xs-2 control-label">Категория</label>
+                    <div class="col-xs-9 center-block">
+                        <select class="form-control" ng-model="ctgSelect" ng-change="getConcepts(ctgSelect);">
+                            <option ng-repeat="ctg in categories" value="{{ctg.ID}}">{{ctg.CtgName}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-2 control-label">Концепт</label>
+                    <div class="col-xs-8 center-block">
+                        <input type="concept" class="form-control" ng-model="concept.FName" placeholder="Введите наименование концепта">
+                    </div>
+                    <div class="col-xs-1">
+                        <button type="submit" class="btn btn-default ">{{cncptsbm}}</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
+                <table class="table table-striped table-condensed table-hover table-bordered">
+
+                    <tr ng-repeat="cncpt in concepts">
+                        <td>{{cncpt.FName}}</td>
+                        <td style="width: 50px;">
+                            <button class="btn btn-success" ng-click="cncptedit(cncpt);">
+                                <i class="glyphicon glyphicon-pencil"></i>
+                            </button>
+                        </td>
+                        <td style="width: 50px;">
+                            <button class="btn btn-danger" ng-click="cncptdelete(cncpt);">
+                                <i class="glyphicon glyphicon-remove"></i>
+                            </button>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+
+        <br>
+
+    </div>
+</div>
+<br>
