@@ -2,9 +2,7 @@
 <html lang="ru">
 <head>
 
-	<meta charset="UTF-8">
-	
-	<title>Редактор словарей</title>
+	<title>iKRA</title>
 	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
@@ -19,8 +17,8 @@
 <body ng-app="app" ng-controller="ctrl">
 
 	<!-- Меню страницы -->
-	<div class="container" align="center">
-        <h1>Редактор словарей</h1>
+	<div class="container" align="center" ng-init="getDomains();">
+        <h1>iKRA</h1>
         <div class="navbar navbar-inverse row" role="navigation">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -34,22 +32,25 @@
                 <div class="navbar-collapse collapse" style="height: 1px;">
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
-                            <a href="" class="dropdown-toggle" data-toggle="dropdown">Функциональный словарь<b class="caret"></b></a>
+                            <a href="" class="dropdown-toggle" data-toggle="dropdown">Функциональные маркеры<b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#/category">Добавить категорию</a></li>
-                                <li><a href="#/concept">Добавить концепт</a></li>
+                                <li><a href="#/category">Категории</a></li>
+                                <li><a href="#/concept">Концепты</a></li>
                             </ul>
                         </li>
-                        <li><a href="#/emotion">Эмоциональный словарь</a></li>
+                        <li><a href="#/emotion">Эмоциональные маркеры</a></li>
                         <li><a href="#/upload">Загрузить</a></li>
                         <li class="dropdown">
                             <a href="" class="dropdown-toggle" data-toggle="dropdown">Сохранить<b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li ng-click="downloadFile('F');"><a>Функциональный словарь</a></li>
-                                <li ng-click="downloadFile('E');"><a>Эмоциональный словарь</a></li>
+                                <li ng-click="downloadFile('F');"><a>Функциональные маркеры</a></li>
+                                <li ng-click="downloadFile('E');"><a>Эмоциональные маркеры</a></li>
                             </ul>
                         </li>
+			<li><a href="#/domain">Домены</a></li>
+			<li><a href="http://176.112.201.41:57772/deepseeweb/index.html#/d/Phones/IKRAPanel01.dashboard?ns=IKRA" target="_blank">График</a></li>
                     </ul>
+		    <ul class="nav navbar-nav navbar-right"><li><a>Пользователь: #(..GetNm())#</a></li></ul>
                 </div>
             </div>
         </div>
@@ -62,5 +63,10 @@
     
 </body>
 
+<script language="Cache" method="GetNm" arguments="" returntype="%String">
+    New uname
+    Set uname = %session.Username
+    Quit uname
+</script>
 
 </html>

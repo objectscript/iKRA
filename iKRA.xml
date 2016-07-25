@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Export generator="Cache" version="25" zv="Cache for Windows (x86-64) 2015.3 (Build 215U)" ts="2016-01-19 12:28:45">
-<Class name="iknowAL.Dictionary.Category">
+<Export generator="Cache" version="25" zv="Cache for UNIX (Red Hat Enterprise Linux for x86-64) 2015.3 (Build 259U)" ts="2016-07-25 13:05:45">
+<Class name="ikra.Dictionary.Category">
 <Super>%Persistent</Super>
 <TimeChanged>63899,74282.76398</TimeChanged>
 <TimeCreated>63897,42111.849257</TimeCreated>
@@ -11,11 +11,11 @@
 
 <Storage name="Default">
 <Type>%Library.CacheStorage</Type>
-<DataLocation>^iknowAL.Dictionary.CategoryD</DataLocation>
+<DataLocation>^ikra.Dictionary.CategoryD</DataLocation>
 <DefaultData>CategoryDefaultData</DefaultData>
-<IdLocation>^iknowAL.Dictionary.CategoryD</IdLocation>
-<IndexLocation>^iknowAL.Dictionary.CategoryI</IndexLocation>
-<StreamLocation>^iknowAL.Dictionary.CategoryS</StreamLocation>
+<IdLocation>^ikra.Dictionary.CategoryD</IdLocation>
+<IndexLocation>^ikra.Dictionary.CategoryI</IndexLocation>
+<StreamLocation>^ikra.Dictionary.CategoryS</StreamLocation>
 <Data name="CategoryDefaultData">
 <Value name="1">
 <Value>%%CLASSNAME</Value>
@@ -28,7 +28,42 @@
 </Class>
 
 
-<Class name="iknowAL.Dictionary.EMarker">
+<Class name="ikra.Dictionary.Domains">
+<Super>%Persistent</Super>
+<TimeChanged>63942,56389.176099</TimeChanged>
+<TimeCreated>63942,56108.020401</TimeCreated>
+
+<Property name="dmnName">
+<Type>%String</Type>
+</Property>
+
+<Index name="indDmnNm">
+<Properties>dmnName</Properties>
+<Unique>1</Unique>
+</Index>
+
+<Storage name="Default">
+<Type>%Library.CacheStorage</Type>
+<DataLocation>^ikra.Dictionary.DomainsD</DataLocation>
+<DefaultData>DomainsDefaultData</DefaultData>
+<IdLocation>^ikra.Dictionary.DomainsD</IdLocation>
+<IndexLocation>^ikra.Dictionary.DomainsI</IndexLocation>
+<StreamLocation>^ikra.Dictionary.DomainsS</StreamLocation>
+<Data name="DomainsDefaultData">
+<Structure>listnode</Structure>
+<Subscript/>
+<Value name="1">
+<Value>%%CLASSNAME</Value>
+</Value>
+<Value name="2">
+<Value>dmnName</Value>
+</Value>
+</Data>
+</Storage>
+</Class>
+
+
+<Class name="ikra.Dictionary.EMarker">
 <Super>%Persistent</Super>
 <TimeChanged>63899,74282.900995</TimeChanged>
 <TimeCreated>63897,42512.063504</TimeCreated>
@@ -43,11 +78,11 @@
 
 <Storage name="Default">
 <Type>%Library.CacheStorage</Type>
-<DataLocation>^iknowAL.Dictionary.EMarkerD</DataLocation>
+<DataLocation>^ikra.Dictionary.EMarkerD</DataLocation>
 <DefaultData>EMarkerDefaultData</DefaultData>
-<IdLocation>^iknowAL.Dictionary.EMarkerD</IdLocation>
-<IndexLocation>^iknowAL.Dictionary.EMarkerI</IndexLocation>
-<StreamLocation>^iknowAL.Dictionary.EMarkerS</StreamLocation>
+<IdLocation>^ikra.Dictionary.EMarkerD</IdLocation>
+<IndexLocation>^ikra.Dictionary.EMarkerI</IndexLocation>
+<StreamLocation>^ikra.Dictionary.EMarkerS</StreamLocation>
 <Data name="EMarkerDefaultData">
 <Value name="1">
 <Value>%%CLASSNAME</Value>
@@ -63,7 +98,7 @@
 </Class>
 
 
-<Class name="iknowAL.Dictionary.Fmarker">
+<Class name="ikra.Dictionary.Fmarker">
 <Super>%Persistent</Super>
 <TimeChanged>63899,74283.02987</TimeChanged>
 <TimeCreated>63897,42386.838795</TimeCreated>
@@ -78,11 +113,11 @@
 
 <Storage name="Default">
 <Type>%Library.CacheStorage</Type>
-<DataLocation>^iknowAL.Dictionary.FmarkerD</DataLocation>
+<DataLocation>^ikra.Dictionary.FmarkerD</DataLocation>
 <DefaultData>FmarkerDefaultData</DefaultData>
-<IdLocation>^iknowAL.Dictionary.FmarkerD</IdLocation>
-<IndexLocation>^iknowAL.Dictionary.FmarkerI</IndexLocation>
-<StreamLocation>^iknowAL.Dictionary.FmarkerS</StreamLocation>
+<IdLocation>^ikra.Dictionary.FmarkerD</IdLocation>
+<IndexLocation>^ikra.Dictionary.FmarkerI</IndexLocation>
+<StreamLocation>^ikra.Dictionary.FmarkerS</StreamLocation>
 <Data name="FmarkerDefaultData">
 <Value name="1">
 <Value>%%CLASSNAME</Value>
@@ -98,14 +133,14 @@
 </Class>
 
 
-<Class name="iknowAL.Dictionary.Load">
+<Class name="ikra.Dictionary.Load">
 <Super>%Persistent</Super>
-<TimeChanged>63899,75563.610032</TimeChanged>
+<TimeChanged>63937,69001.256365</TimeChanged>
 <TimeCreated>63897,44888.806336</TimeCreated>
 
 <Method name="LoadFunctional">
 <ClassMethod>1</ClassMethod>
-<FormalSpec>sFolder:%String="D:\intersystems\wPhones\Fmarkers.txt"</FormalSpec>
+<FormalSpec>sFolder:%String="/tmp/Load/Fmarkers.txt"</FormalSpec>
 <Implementation><![CDATA[
 	set cid = 0
 	set stream = ##class(%Stream.FileCharacter).%New()
@@ -114,12 +149,12 @@
 		set str = stream.ReadLine()
 		if (($piece(str, "#", 1) = "i") && ($piece(str, "#", 2) '= "END")) {
 			set cName = $piece(str, "#", 2)
-			&sql(INSERT INTO iknowAL_Dictionary.Category(CtgName) VALUES(:cName))
-			&sql(SELECT ID INTO :cid FROM iknowAL_Dictionary.Category WHERE CtgName = :cName)
+			&sql(INSERT INTO ikra_Dictionary.Category(CtgName) VALUES(:cName))
+			&sql(SELECT ID INTO :cid FROM ikra_Dictionary.Category WHERE CtgName = :cName)
 		}
 		elseif ($piece(str, "#", 1) = "t") {
 			set fName = $piece(str, "#", 2)
-			&sql(INSERT INTO iknowAL_Dictionary.Fmarker(FName, CtgID) VALUES(:fName, :cid))
+			&sql(INSERT INTO ikra_Dictionary.Fmarker(FName, CtgID) VALUES(:fName, :cid))
 		}
 	}
 ]]></Implementation>
@@ -127,7 +162,7 @@
 
 <Method name="LoadEmotion">
 <ClassMethod>1</ClassMethod>
-<FormalSpec>sFolder:%String="D:\intersystems\wPhones\Emarkers.txt"</FormalSpec>
+<FormalSpec>sFolder:%String="/tmp/Load/Emarkers.txt"</FormalSpec>
 <Implementation><![CDATA[
 	set stream = ##class(%Stream.FileCharacter).%New()
 	set sc = stream.LinkToFile(sFolder)
@@ -139,7 +174,7 @@
 		while ($piece(cName, ",", i) '= "") {
 			set eName = $piece(cName, ",", i)
 			set i = i + 1
-			&sql(INSERT INTO iknowAL_Dictionary.EMarker(EName, EValue) VALUES(:eName, :eVal))
+			&sql(INSERT INTO ikra_Dictionary.EMarker(EName, EValue) VALUES(:eName, :eVal))
 		}
 	}
 ]]></Implementation>
@@ -148,28 +183,28 @@
 <Method name="DellFunctional">
 <ClassMethod>1</ClassMethod>
 <Implementation><![CDATA[
-	do ##class(iknowAL.Dictionary.Category).%KillExtent()
-	do ##class(iknowAL.Dictionary.Fmarker).%KillExtent()
-	/*&sql(DELETE FROM iknowAL_Dictionary.Category)
-	&sql(DELETE FROM iknowAL_Dictionary.FMarker)*/
+	do ##class(ikra.Dictionary.Category).%KillExtent()
+	do ##class(ikra.Dictionary.Fmarker).%KillExtent()
+	/*&sql(DELETE FROM ikra_Dictionary.Category)
+	&sql(DELETE FROM ikra_Dictionary.FMarker)*/
 ]]></Implementation>
 </Method>
 
 <Method name="DellEmotion">
 <ClassMethod>1</ClassMethod>
 <Implementation><![CDATA[
-	do ##class(iknowAL.Dictionary.EMarker).%KillExtent()
-	/*&sql(DELETE FROM iknowAL_Dictionary.EMarker)*/
+	do ##class(ikra.Dictionary.EMarker).%KillExtent()
+	/*&sql(DELETE FROM ikra_Dictionary.EMarker)*/
 ]]></Implementation>
 </Method>
 
 <Storage name="Default">
 <Type>%Library.CacheStorage</Type>
-<DataLocation>^iknowAL.Dictionary.LoadD</DataLocation>
+<DataLocation>^ikra.Dictionary.LoadD</DataLocation>
 <DefaultData>LoadDefaultData</DefaultData>
-<IdLocation>^iknowAL.Dictionary.LoadD</IdLocation>
-<IndexLocation>^iknowAL.Dictionary.LoadI</IndexLocation>
-<StreamLocation>^iknowAL.Dictionary.LoadS</StreamLocation>
+<IdLocation>^ikra.Dictionary.LoadD</IdLocation>
+<IndexLocation>^ikra.Dictionary.LoadI</IndexLocation>
+<StreamLocation>^ikra.Dictionary.LoadS</StreamLocation>
 <Data name="LoadDefaultData">
 <Value name="1">
 <Value>%%CLASSNAME</Value>
@@ -179,7 +214,7 @@
 </Class>
 
 
-<Class name="iknowAL.Dictionary.MarksReview">
+<Class name="ikra.Dictionary.MarksReview">
 <Super>%Persistent</Super>
 <TimeChanged>63930,53279.687681</TimeChanged>
 <TimeCreated>63897,42759.824215</TimeCreated>
@@ -212,11 +247,11 @@
 
 <Storage name="Default">
 <Type>%Library.CacheStorage</Type>
-<DataLocation>^iknowAL.DictioD092.MarksReviewD</DataLocation>
+<DataLocation>^ikra.DictioD092.MarksReviewD</DataLocation>
 <DefaultData>MarksReviewDefaultData</DefaultData>
-<IdLocation>^iknowAL.DictioD092.MarksReviewD</IdLocation>
-<IndexLocation>^iknowAL.DictioD092.MarksReviewI</IndexLocation>
-<StreamLocation>^iknowAL.DictioD092.MarksReviewS</StreamLocation>
+<IdLocation>^ikra.DictioD092.MarksReviewD</IdLocation>
+<IndexLocation>^ikra.DictioD092.MarksReviewI</IndexLocation>
+<StreamLocation>^ikra.DictioD092.MarksReviewS</StreamLocation>
 <Data name="MarksReviewDefaultData">
 <Structure>listnode</Structure>
 <Subscript/>
@@ -243,7 +278,7 @@
 </Class>
 
 
-<Class name="iknowAL.Dictionary.MarksUnit">
+<Class name="ikra.Dictionary.MarksUnit">
 <Super>%Persistent</Super>
 <TimeChanged>63930,56868.18777</TimeChanged>
 <TimeCreated>63897,42881.228071</TimeCreated>
@@ -276,11 +311,11 @@
 
 <Storage name="Default">
 <Type>%Library.CacheStorage</Type>
-<DataLocation>^iknowAL.Dictionary.MarksUnitD</DataLocation>
+<DataLocation>^ikra.Dictionary.MarksUnitD</DataLocation>
 <DefaultData>MarksUnitDefaultData</DefaultData>
-<IdLocation>^iknowAL.Dictionary.MarksUnitD</IdLocation>
-<IndexLocation>^iknowAL.Dictionary.MarksUnitI</IndexLocation>
-<StreamLocation>^iknowAL.Dictionary.MarksUnitS</StreamLocation>
+<IdLocation>^ikra.Dictionary.MarksUnitD</IdLocation>
+<IndexLocation>^ikra.Dictionary.MarksUnitI</IndexLocation>
+<StreamLocation>^ikra.Dictionary.MarksUnitS</StreamLocation>
 <Data name="MarksUnitDefaultData">
 <Structure>listnode</Structure>
 <Subscript/>
@@ -307,9 +342,178 @@
 </Class>
 
 
-<Class name="iknowAL.Phones.Loader">
+<Class name="ikra.Hotels.Loader">
+<Description>
+Class to load hotel data from globals, create iKnow domain for use in iKRA</Description>
 <IncludeCode>%IKPublic</IncludeCode>
-<TimeChanged>63936,41747.996442</TimeChanged>
+<TimeChanged>63949,59654.539327</TimeChanged>
+<TimeCreated>63944,45934.078273</TimeCreated>
+
+<UDLText name="T">
+<Content><![CDATA[
+// do ##class(ikra.Hotels.Loader).Free("Hotels")
+
+]]></Content>
+</UDLText>
+
+<UDLText name="T">
+<Content><![CDATA[
+// do ##class(ikra.Hotels.Loader).Load("Hotels","/tmp/Load/Hotels",1,100)
+
+]]></Content>
+</UDLText>
+
+<Method name="Load">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>domName:%String,domFolder:%String,FromId:%Integer=1,ToId:%Integer=0</FormalSpec>
+<ReturnType>%Status</ReturnType>
+<Implementation><![CDATA[
+	
+	// Check the input parameters for validity
+	if (((ToId '= 0) & (FromId > ToId)) || (FromId <= 0) || (ToId < 0)) 
+	{
+		write "Wrong parameters FromID|ToID.", !	
+		return $$$ERROR()
+	}
+
+	write "Loading started at: ", $zdatetime($horolog), !
+	
+	// If the domain does not exist, create a new (also creating a configuration)
+	do ##class(ikra.util.main).CreateDomainIfNotExists(domName, domFolder)
+	set domId = ##class(%iKnow.Domain).GetOrCreateId(domName)
+	// Set the name of configuration	
+	#dim confName As %String = "Conf"_domName
+	
+	set lister = ##class(%iKnow.Source.SQL.Lister).%New(domId)
+	do lister.SetConfig(confName)	
+	#dim initialNumOfSources As %Integer = ##class(%iKnow.Queries.SourceAPI).GetCountByDomain(domId)
+	
+	
+	set loader = ##class(%iKnow.Source.Loader).%New(domId)
+	
+	// Crating the Metadata fields	
+	do ..SetMetaDataFields(domName)	
+	
+	set myquery = "SELECT ID1 As ID, hotel_id as UnitId, hotel_name As UnitName, review_text as reviewText,"_
+				  " rating as AuthorRating FROM Nui.hreview"
+	
+	// Form a query in accordance with the input parameters
+	if (ToId > 0) 						{ set myquery = myquery_" Where ID1 >= "_FromId_" AND ID1 <= "_ToId }
+	elseif ((FromId > 1) && (ToId = 0)) { set myquery = myquery_" Where ID1 >= "_FromId }
+	
+	// Forming batch
+	// =================
+	set meta = $lb("UnitId", "UnitName", "AuthorRating")
+	set data = $lb("reviewText")
+	set group = "ID"
+	set id = "ID"
+	
+	set tSC = lister.AddListToBatch(myquery, id, group, data, meta)
+    
+    if (tSC '= $$$OK) { 
+    	write "The lister failed: ",$System.Status.DisplayError(tSC)
+    	return tSC 
+    }
+    // =================
+      
+    write "Adding List to Batch Complete!", !
+    	
+    set tSC = loader.ProcessBatch()      
+    
+    // In the event of an error, the process should not be interrupted, since errors can be harmless.
+    if (tSC '= $$$OK) { 
+    	write "The loader failed: ", $System.Status.DisplayError(tSC) 
+    }
+    
+	#dim numOfSources As %Integer = ##class(%iKnow.Queries.SourceAPI).GetCountByDomain(domId)
+	
+	write !, "Loading finished at: ", $zdatetime($horolog), !
+			
+	write !, "Initial Number of Sources: ", initialNumOfSources, !
+	write "Sources Added: ", numOfSources - initialNumOfSources, !
+	write "Total: ", numOfSources,!
+		
+	return numOfSources - initialNumOfSources
+]]></Implementation>
+</Method>
+
+<Method name="SetMetaDataFields">
+<Description>
+Method of setting the metadata fields for reviews
+domName - Domain name</Description>
+<ClassMethod>1</ClassMethod>
+<FormalSpec>domName:%String</FormalSpec>
+<ReturnType>%Status</ReturnType>
+<Implementation><![CDATA[
+	set domainId = ##class(ikra.util.main).GetDomainId(domName)
+	
+	// Setting the metadata fields
+	do ##class(%iKnow.Queries.MetadataAPI).AddField(domainId,"UnitId",,$$$MDDTSTRING)
+	do ##class(%iKnow.Queries.MetadataAPI).AddField(domainId,"UnitName",,$$$MDDTSTRING)
+	do ##class(%iKnow.Queries.MetadataAPI).AddField(domainId,"AuthorRating",,$$$MDDTSTRING)
+	
+	write "Metadata fields added.", !
+	
+	return $$$OK
+]]></Implementation>
+</Method>
+
+<Method name="RemoveMetaDataFields">
+<Description>
+Method of deleting metadata fields from specified domain
+domName - Domain name</Description>
+<ClassMethod>1</ClassMethod>
+<FormalSpec>domName:%String</FormalSpec>
+<ReturnType>%Status</ReturnType>
+<Implementation><![CDATA[
+	set domainId = ##class(ikra.util.main).GetDomainId(domName)
+	
+	set tSC = ##class(%iKnow.Queries.MetadataAPI).RemoveField(domainId, "UnitId")
+	set tSC = tSC + ##class(%iKnow.Queries.MetadataAPI).RemoveField(domainId, "UnitName")
+	set tSC = tSC + ##class(%iKnow.Queries.MetadataAPI).RemoveField(domainId, "AuthorRating")
+	
+	if (tSC = 3) { write "all metadata fields are deleted", ! }
+	else { write "errors in deleting metadata fields", ! }
+		
+	return tSC
+]]></Implementation>
+</Method>
+
+<Method name="Free">
+<Description>
+Method of deleting a domain with all environment</Description>
+<ClassMethod>1</ClassMethod>
+<FormalSpec>domName:%String</FormalSpec>
+<ReturnType>%Status</ReturnType>
+<Implementation><![CDATA[
+	kill ^ikraDomainFolder(domName)
+	kill ^preferences
+	#dim confName As %String = "Conf"_domName
+	
+	do ..RemoveMetaDataFields(domName)	
+	do ##class(ikra.util.main).DeleteDictionaries(domName)			
+	do ##class(ikra.util.main).DeleteBlackLists(domName, "GeneralBlackList")	
+	
+	set tSC = ##class(ikra.util.main).DeleteConfiguration(confName)
+	
+	if (tSC '= $$$OK) { write "Cannot delete configuration :", confName, $System.Status.DisplayError(tSC), ! }
+	
+	// Kill Extent of all classes
+	do ##class(ikra.Dictionary.MarksUnit).%KillExtent()
+	do ##class(ikra.Dictionary.MarksReview).%KillExtent()
+
+	set tSC = ##class(ikra.util.main).DeleteDomain(domName)
+	if (tSC '= $$$OK) { write "Can't delete domain :", domName, $System.Status.DisplayError(tSC), ! }
+	write "ok", !
+	return tSC
+]]></Implementation>
+</Method>
+</Class>
+
+
+<Class name="ikra.Phones.Loader">
+<IncludeCode>%IKPublic</IncludeCode>
+<TimeChanged>63944,43591.196177</TimeChanged>
 <TimeCreated>63702,54395.292655</TimeCreated>
 
 <Method name="Load">
@@ -317,16 +521,15 @@
 Method of loading reviews domain.
 domName - Domain name.
 domFolder - folder for creating a configuration.. Contains dictionaries, blacklists, etc.
-For example, with call: do ##class(iknowAL.Phones.loader).Load("Phone", "D:\intuersystems\wPhones")</Description>
+For example, with call: do ##class(ikra.Phones.loader).Load("Phone", "D:\intuersystems\wPhones")</Description>
 <ClassMethod>1</ClassMethod>
-<FormalSpec>domName:%String="ph_test",domFolder:%String="D:\intersystems\wPhones\"</FormalSpec>
+<FormalSpec>domName:%String="ph_test",domFolder:%String="/tmp/Load/"</FormalSpec>
 <ReturnType>%Status</ReturnType>
 <Implementation><![CDATA[
-	do ##class(iknowAL.Files.Parser).CreateCategories()
 	write "Loading started at: ", $zdatetime($horolog), !
 	
 	// If the domain does not exist, create a new (also creating a configuration)
-	do ##class(iknowAL.util.main).CreateDomainIfNotExists(domName, domFolder)
+	do ##class(ikra.util.main).CreateDomainIfNotExists(domName, domFolder)
 	set domId = ##class(%iKnow.Domain).GetOrCreateId(domName)
 	// Set the name of configuration	
 	#dim confName As %String = "Conf"_domName
@@ -364,8 +567,8 @@ For example, with call: do ##class(iknowAL.Phones.loader).Load("Phone", "D:\intu
     			write "The lister failed: ",$System.Status.DisplayError(tSC)
     			return tSC 
     		}
-    		// Insert/update record in iknowAL_Phones_Stat.Review
-			&sql(INSERT OR UPDATE INTO iknowAL_Phones_Stat.Review 
+    		// Insert/update record in ikra_Phones_Stat.Review
+			&sql(INSERT OR UPDATE INTO ikra_Phones_Stat.Review 
 		 		(DomainName, SourceId, AuthorRating, PhoneId)
 		  		VALUES (:domName, :i, NULLIF({fn CONVERT(:AutRat,SQL_INTEGER)} ,0), {fn CONVERT(:pId,SQL_INTEGER)}))
 			if (SQLCODE '= 0) {
@@ -373,8 +576,8 @@ For example, with call: do ##class(iknowAL.Phones.loader).Load("Phone", "D:\intu
 				write "Error saving review #", i, !
 			}
 			
-			set domID = ##class(iknowAL.util.main).GetDomainId(domName)
-			&sql(INSERT OR UPDATE INTO iknowAL_Dictionary.MarksReview
+			set domID = ##class(ikra.util.main).GetDomainId(domName)
+			&sql(INSERT OR UPDATE INTO ikra_Dictionary.MarksReview
 		 		(DomainID, UID, RID, CtgID, Mark)
 		  		VALUES (:domID, {fn CONVERT(:pId,SQL_INTEGER)}, :i, 1, 0))
 			if (SQLCODE '= 0) {
@@ -407,7 +610,7 @@ For example, with call: do ##class(iknowAL.Phones.loader).Load("Phone", "D:\intu
 		set $list(MetDat, *+1) = $LB($piece(line, "#", 1), $piece(line, "#", 2), $piece(line, "#", 3), $piece(line, "#", 4))
 	}
 	
-	// Loop through all sources to fill iknowAL_Phones_Stat.Review table
+	// Loop through all sources to fill ikra_Phones_Stat.Review table
 	for i = initialNumOfSources+1:1:numOfSources 
 	{
 		set externalId = ##class(%iKnow.Queries.SourceAPI).GetExternalId(domId, i)
@@ -416,7 +619,7 @@ For example, with call: do ##class(iknowAL.Phones.loader).Load("Phone", "D:\intu
 			if ((i >= $list($list(MetDat, j), 1)) && (i <= $list($list(MetDat, j), 2))){
 				&sql(
 					SELECT AuthorRating INTO :AutRat
-					FROM  iknowAL_Phones_Stat.Review  
+					FROM  ikra_Phones_Stat.Review  
 					WHERE SourceId = :i)
 				do ##class(%iKnow.Queries.MetadataAPI).SetValue(domId, "PhoneId", externalId, $list($list(MetDat, j), 3))
 				do ##class(%iKnow.Queries.MetadataAPI).SetValue(domId, "PhoneName", externalId, $list($list(MetDat, j), 4))
@@ -444,11 +647,11 @@ domName - Domain name</Description>
 <FormalSpec>domName:%String</FormalSpec>
 <ReturnType>%Status</ReturnType>
 <Implementation><![CDATA[
-	set domainId = ##class(iknowAL.util.main).GetDomainId(domName)
+	set domainId = ##class(ikra.util.main).GetDomainId(domName)
 	
 	// Setting the metadata fields
-	do ##class(%iKnow.Queries.MetadataAPI).AddField(domainId,"PhoneId",,$$$MDDTSTRING)
-	do ##class(%iKnow.Queries.MetadataAPI).AddField(domainId,"PhoneName",,$$$MDDTSTRING)
+	do ##class(%iKnow.Queries.MetadataAPI).AddField(domainId,"UnitId",,$$$MDDTSTRING)
+	do ##class(%iKnow.Queries.MetadataAPI).AddField(domainId,"UnitName",,$$$MDDTSTRING)
 	do ##class(%iKnow.Queries.MetadataAPI).AddField(domainId,"AuthorRating",,$$$MDDTSTRING)
 	
 	write "Metadata fields added.", !
@@ -465,7 +668,7 @@ domName - Domain name</Description>
 <FormalSpec>domName:%String</FormalSpec>
 <ReturnType>%Status</ReturnType>
 <Implementation><![CDATA[
-	set domainId = ##class(iknowAL.util.main).GetDomainId(domName)
+	set domainId = ##class(ikra.util.main).GetDomainId(domName)
 	
 	set tSC = ##class(%iKnow.Queries.MetadataAPI).RemoveField(domainId, "PhoneId")
 	set tSC = tSC + ##class(%iKnow.Queries.MetadataAPI).RemoveField(domainId, "PhoneName")
@@ -484,26 +687,22 @@ Method of deleting a domain with all environment</Description>
 <FormalSpec>domName:%String</FormalSpec>
 <ReturnType>%Status</ReturnType>
 <Implementation><![CDATA[
-	kill ^iknowALDomainFolder(domName)
+	kill ^ikraDomainFolder(domName)
 	kill ^preferences
 	#dim confName As %String = "Conf"_domName
 	
 	do ..RemoveMetaDataFields(domName)	
-	do ##class(iknowAL.util.main).DeleteDictionaries(domName)			
-	do ##class(iknowAL.util.main).DeleteBlackLists(domName, "GeneralBlackList")	
+	do ##class(ikra.util.main).DeleteDictionaries(domName)			
+	do ##class(ikra.util.main).DeleteBlackLists(domName, "GeneralBlackList")	
 	
-	set tSC = ##class(iknowAL.util.main).DeleteConfiguration(confName)
+	set tSC = ##class(ikra.util.main).DeleteConfiguration(confName)
 	
 	if (tSC '= $$$OK) { write "Cannot delete configuration :", confName, $System.Status.DisplayError(tSC), ! }
 	
 	// Kill Extent of all classes
-	do ##class(iknowAL.Dictionary.MarksUnit).%KillExtent()
-	do ##class(iknowAL.Dictionary.MarksReview).%KillExtent()
-	do ##class(iknowAL.Phones.Stat.Review).%KillExtent()
-	do ##class(iknowAL.Phones.Stat.Phone).%KillExtent()
-	do ##class(iknowAL.Phones.Stat.ReviewStat).%KillExtent()
-	do ##class(iknowAL.Phones.Stat.PhoneStat).%KillExtent()
-	set tSC = ##class(iknowAL.util.main).DeleteDomain(domName)
+	do ##class(ikra.Dictionary.MarksUnit).%KillExtent()
+	do ##class(ikra.Dictionary.MarksReview).%KillExtent()
+	set tSC = ##class(ikra.util.main).DeleteDomain(domName)
 	if (tSC '= $$$OK) { write "Can't delete domain :", domName, $System.Status.DisplayError(tSC), ! }
 	write "ok", !
 	return tSC
@@ -512,7 +711,7 @@ Method of deleting a domain with all environment</Description>
 </Class>
 
 
-<Class name="iknowAL.Phones.Processing.Dictionary">
+<Class name="ikra.Phones.Processing.Dictionary">
 <IncludeCode>%IKPublic</IncludeCode>
 <TimeChanged>63930,59375.277465</TimeChanged>
 <TimeCreated>63703,51280.174163</TimeCreated>
@@ -525,7 +724,7 @@ Method of deleting a domain with all environment</Description>
 	
 	kill ^fmarkers
 	
-	set domainId = ##class(iknowAL.util.main).GetDomainId(domName)
+	set domainId = ##class(ikra.util.main).GetDomainId(domName)
 	set i = 1
 	
 	&sql(declare cur1 cursor for 
@@ -533,11 +732,11 @@ Method of deleting a domain with all environment</Description>
    		into :line
 		from
 		(select ctg.ctgname, 1 nm, fmr.fname
-		from iknowal_dictionary.category ctg
-		join iknowal_dictionary.fmarker fmr on ctg.id = fmr.ctgid
+		from ikra_dictionary.category ctg
+		join ikra_dictionary.fmarker fmr on ctg.id = fmr.ctgid
 		union all
 		select ctgname, 0, ctgname
-		from iknowal_dictionary.category) tb
+		from ikra_dictionary.category) tb
 		order by ctgname, nm, fname)
    &sql(open cur1)
    &sql(fetch cur1)
@@ -601,10 +800,10 @@ Method of deleting a domain with all environment</Description>
 <Implementation><![CDATA[
 	kill ^emarkers
 
-	set domainId = ##class(iknowAL.util.main).GetDomainId(domName)
+	set domainId = ##class(ikra.util.main).GetDomainId(domName)
 	set i = 1
 	
-	&sql(declare cur cursor for select case when EValue > 0 then '+' || EValue else '' || EValue end || '#' || EName into :line from iknowal_dictionary.emarker order by EName)
+	&sql(declare cur cursor for select case when EValue > 0 then '+' || EValue else '' || EValue end || '#' || EName into :line from ikra_dictionary.emarker order by EName)
    	&sql(open cur)
    	&sql(fetch cur)
 	
@@ -662,10 +861,10 @@ writeToFile - filename to write a full list of similar terms. If writeToFile = "
 	
 	kill ^fmarkers
 	
-	set domainId = ##class(iknowAL.util.main).GetDomainId(domName)	
+	set domainId = ##class(ikra.util.main).GetDomainId(domName)	
 
 	// Open the file with the dictionary of functional markers.		
-	set fileNameIn = ^iknowALDomainFolder(domName)_"Fmarkers.txt"
+	set fileNameIn = ^ikraDomainFolder(domName)_"Fmarkers.txt"
 	set streamIn  = ##class(%Stream.FileCharacter).%New()
 	set tSC = streamIn.LinkToFile(fileNameIn)
 	
@@ -677,7 +876,7 @@ writeToFile - filename to write a full list of similar terms. If writeToFile = "
 	
 	// creating output file	
 	if (writeToFile '= "") {
-		set fileNameOut = ^iknowALDomainFolder(domName)_writeToFile
+		set fileNameOut = ^ikraDomainFolder(domName)_writeToFile
 		set streamOut = ##class(%Stream.FileCharacter).%New()
 		set tSC = streamOut.LinkToFile(fileNameOut)	
 		
@@ -803,10 +1002,10 @@ writeToFile - filename to write a full list of similar terms. If writeToFile = "
 	
 	kill ^emarkers
 
-	set domainId = ##class(iknowAL.util.main).GetDomainId(domName)	
+	set domainId = ##class(ikra.util.main).GetDomainId(domName)	
 
 	// Open the file with the dictionary of functional markers.		
-	set fileNameIn = ^iknowALDomainFolder(domName)_"Emarkers.txt"
+	set fileNameIn = ^ikraDomainFolder(domName)_"Emarkers.txt"
 	set streamIn  = ##class(%Stream.FileCharacter).%New()
 	set tSC = streamIn.LinkToFile(fileNameIn)
 	
@@ -818,7 +1017,7 @@ writeToFile - filename to write a full list of similar terms. If writeToFile = "
 	
 	// creating output file	
 	if (writeToFile '= "") {
-		set fileNameOut = ^iknowALDomainFolder(domName)_writeToFile
+		set fileNameOut = ^ikraDomainFolder(domName)_writeToFile
 		set streamOut = ##class(%Stream.FileCharacter).%New()
 		set tSC = streamOut.LinkToFile(fileNameOut)	
 		
@@ -919,10 +1118,10 @@ writeToFile - filename to write a full list of similar terms. If writeToFile = "
 </Class>
 
 
-<Class name="iknowAL.Phones.Processing.Processing">
+<Class name="ikra.Phones.Processing.Processing">
 <IncludeCode>%IKPublic</IncludeCode>
 <Super>%RegisteredObject</Super>
-<TimeChanged>63936,41582.124903</TimeChanged>
+<TimeChanged>63944,43619.896181</TimeChanged>
 <TimeCreated>63703,51656.851126</TimeCreated>
 
 <Method name="Start">
@@ -933,7 +1132,7 @@ writeToFile - filename to write a full list of similar terms. If writeToFile = "
 	
 	kill ^preferences
 	
-	set fileNameIn = ^iknowALDomainFolder(domName)_"Prefs.txt"
+	set fileNameIn = ^ikraDomainFolder(domName)_"Prefs.txt"
 	set streamIn  = ##class(%Stream.FileCharacter).%New()
 	set tSC = streamIn.LinkToFile(fileNameIn)
 	
@@ -1074,10 +1273,10 @@ writeToFile - filename to write a full list of similar terms. If writeToFile = "
 		if ($ZCONVERT(^preferences("CALCALGORITHM"),"L") = "path") {
 			if ($data(^preferences("NEGATION"))) {
 				if ($ZCONVERT(^preferences("NEGATION"),"L") = "exclude") {
-					set tSC = ##class(iknowAL.Phones.Processing.Processing).ProcessAllSourcesPaths(domName, "exclude")
+					set tSC = ##class(ikra.Phones.Processing.Processing).ProcessAllSourcesPaths(domName, "exclude")
 				}
 				else {
-					set tSC = ##class(iknowAL.Phones.Processing.Processing).ProcessAllSourcesPaths(domName, "ignore")
+					set tSC = ##class(ikra.Phones.Processing.Processing).ProcessAllSourcesPaths(domName, "ignore")
 				}
 			}
 				else {
@@ -1088,10 +1287,10 @@ writeToFile - filename to write a full list of similar terms. If writeToFile = "
 		else {
 			if ($data(^preferences("NEGATION"))) {
 				if ($ZCONVERT(^preferences("NEGATION"),"L") = "ignore") {
-					set tSC = ##class(iknowAL.Phones.Processing.Processing).ProcessAllSources(domName, "ignore")
+					set tSC = ##class(ikra.Phones.Processing.Processing).ProcessAllSources(domName, "ignore")
 				}
 				else {
-					set tSC = ##class(iknowAL.Phones.Processing.Processing).ProcessAllSources(domName, "inverse") //exclude
+					set tSC = ##class(ikra.Phones.Processing.Processing).ProcessAllSources(domName, "inverse") //exclude
 				}
 			}
 				else {
@@ -1121,10 +1320,10 @@ domName - Domain name, negation: exclude - Exclude sentences with negation from 
 	set beginTime = $piece($horolog,",",2)
 	write !, "Started at: ", $ztime(beginTime), !
 	
-	set domainId = ##class(iknowAL.util.main).GetDomainId(domName)	
+	set domainId = ##class(ikra.util.main).GetDomainId(domName)	
 	
 	// Processing the dictionaries
-	set tSC = ##class(iknowAL.Phones.Processing.Dictionary).TeachEMarkersDictionaryBD(domName)
+	set tSC = ##class(ikra.Phones.Processing.Dictionary).TeachEMarkersDictionaryBD(domName)
 	
 	if (tSC '= $$$OK) {
 		do $System.Status.GetErrorText(tSC)
@@ -1132,7 +1331,7 @@ domName - Domain name, negation: exclude - Exclude sentences with negation from 
 		return $$$ERROR("Can't process emarkers dictionary")
 	}
 	
-	set tSC = ##class(iknowAL.Phones.Processing.Dictionary).TeachFMarkersDictionaryBD(domName)
+	set tSC = ##class(ikra.Phones.Processing.Dictionary).TeachFMarkersDictionaryBD(domName)
 	
 	if (tSC '= $$$OK) {
 		do $System.Status.GetErrorText(tSC)
@@ -1140,16 +1339,16 @@ domName - Domain name, negation: exclude - Exclude sentences with negation from 
 		return $$$ERROR("Can't process fmarkers dictionary")
 	}
 	
-	write "   Clearing old stats.."
-	set tSC = ..ClearStats()
+	/*write "   Clearing old stats.."
+	set tSC = ..ClearStats()*/
 	
-	if (tSC '= $$$OK) {
+	/*if (tSC '= $$$OK) {
 		do $System.Status.GetErrorText(tSC)
 		w !
 	}
 	else {
 		write "  Done.", !
-	}
+	}*/
 	
 	write "   Clearing old sentences.."
 	set tSC = ..ClearSentences()
@@ -1203,41 +1402,7 @@ domName - Domain name, negation: exclude - Exclude sentences with negation from 
 		write "  Done.", !
 	}
 	
-	write "   Processing Emotional Stats.."
-	set tSC =  ..ProcessingStats(domName, negation, "sentence")
-	
-	if (tSC '= $$$OK) {
-		do $System.Status.GetErrorText(tSC)
-		w !
-	}	
-	else {
-		write "  Done.", !
-	}
-	
-	write "   Processing Sucpect and Usefulness of reviews.."
-	set tSC = ..ProcessSuspectAndUsefulness()
-	
-	if (tSC '= $$$OK) {
-		do $System.Status.GetErrorText(tSC)
-		w !
-	}	
-	else {
-		write "  Done.", !
-	}
-	
-	write "   Processing User Sentences for Categories.."
-	
 	set maxLength = ^preferences("MAXSENTENCELENGTHTORETURN")
-	
-	set tSC = ..ProcessAllPhonesSentences(domName, maxLength)
-	
-	if (tSC '= $$$OK) {
-		do $System.Status.GetErrorText(tSC)
-		w !
-	}	
-	else {
-		write "  Done.", !
-	}	
 	
 	set endTime = $piece($horolog,",",2)
 
@@ -1249,13 +1414,13 @@ domName - Domain name, negation: exclude - Exclude sentences with negation from 
 
 <Method name="BuildProcessingSentences">
 <Description>
-The method analyzes the sentences of the sources on the emotional markers and fill the iknowAL_Phones_Processing.Sentence table.</Description>
+The method analyzes the sentences of the sources on the emotional markers and fill the ikra_Phones_Processing.Sentence table.</Description>
 <ClassMethod>1</ClassMethod>
 <FormalSpec>domName:%String</FormalSpec>
 <Private>1</Private>
 <ReturnType>%Status</ReturnType>
 <Implementation><![CDATA[
-	set domainId = ##class(iknowAL.util.main).GetDomainId(domName)	
+	set domainId = ##class(ikra.util.main).GetDomainId(domName)	
 	
 	set p1 = ""	
 		
@@ -1297,13 +1462,13 @@ The method analyzes the sentences of the sources on the emotional markers and fi
 			set sourceId = ##class(%iKnow.Queries.SentenceAPI).GetSourceId(domainId, sentenceId)
 			
 			// Obtain Sentence ID in the table
-			&sql(SELECT ID INTO :id FROM  iknowAL_Phones_Processing.Sentence WHERE SentenceId = :sentenceId AND DomainName = :domName)
+			&sql(SELECT ID INTO :id FROM  ikra_Phones_Processing.Sentence WHERE SentenceId = :sentenceId AND DomainName = :domName)
 			
 			// If the query does not return anything, then add a new record
 			if (SQLCODE = 100) {	
-				&sql(INSERT INTO iknowAL_Phones_Processing.Sentence (DomainName, SentenceId, SrcId) 
+				&sql(INSERT INTO ikra_Phones_Processing.Sentence (DomainName, SentenceId, SrcId) 
 					 VALUES (:domName, :sentenceId, :sourceId))
-				set id = ^iknowAL.Phones.PrC684.SentenceD
+				set id = ^ikra.Phones.PrC684.SentenceD
 			}
 			elseif (SQLCODE < 0) {
 				write "Error during SQL query.", !
@@ -1312,8 +1477,8 @@ The method analyzes the sentences of the sources on the emotional markers and fi
 			}
 			
 			// Adding value in the appropriate field. (Positive or Negative) 					
-			if (sValue = "+1")		{set $list(^iknowAL.Phones.PrC684.SentenceD(id),4) = $list(^iknowAL.Phones.PrC684.SentenceD(id),4) + 1 }
-			elseif (sValue = "-1")	{set $list(^iknowAL.Phones.PrC684.SentenceD(id),5) = $list(^iknowAL.Phones.PrC684.SentenceD(id),5) + 1 }
+			if (sValue = "+1")		{set $list(^ikra.Phones.PrC684.SentenceD(id),4) = $list(^ikra.Phones.PrC684.SentenceD(id),4) + 1 }
+			elseif (sValue = "-1")	{set $list(^ikra.Phones.PrC684.SentenceD(id),5) = $list(^ikra.Phones.PrC684.SentenceD(id),5) + 1 }
 							
 		}	// for (Sentence)
 		
@@ -1334,7 +1499,7 @@ Method of processing negative sentences.</Description>
 
 	set ^shortNegSent = 0
 	
-	set domainId = ##class(iknowAL.util.main).GetDomainId(domName)	
+	set domainId = ##class(ikra.util.main).GetDomainId(domName)	
 	
 	set length = ##class(%iKnow.Queries.SourceAPI).GetCountByDomain(domainId)
 	
@@ -1354,14 +1519,14 @@ Method of processing negative sentences.</Description>
 				set sentenceId = $listget(att(j),4)
 				
 				// Obtain Sentence ID in the table
-				&sql(SELECT ID INTO :id FROM  iknowAL_Phones_Processing.Sentence WHERE SentenceId = :sentenceId AND DomainName = :domName)
+				&sql(SELECT ID INTO :id FROM  ikra_Phones_Processing.Sentence WHERE SentenceId = :sentenceId AND DomainName = :domName)
 				
 				// Switch the Positive and Negative values.
 	           	if (SQLCODE = 0) {
-	            	set temp = $list(^iknowAL.Phones.PrC684.SentenceD(id), 4)
-	            	set $list(^iknowAL.Phones.PrC684.SentenceD(id),4) = $list(^iknowAL.Phones.PrC684.SentenceD(id),5)
-	            	set $list(^iknowAL.Phones.PrC684.SentenceD(id),5) = temp
-	            	set $list(^iknowAL.Phones.PrC684.SentenceD(id),6) = -1
+	            	set temp = $list(^ikra.Phones.PrC684.SentenceD(id), 4)
+	            	set $list(^ikra.Phones.PrC684.SentenceD(id),4) = $list(^ikra.Phones.PrC684.SentenceD(id),5)
+	            	set $list(^ikra.Phones.PrC684.SentenceD(id),5) = temp
+	            	set $list(^ikra.Phones.PrC684.SentenceD(id),6) = -1
 	           	}
 	        }
 	        
@@ -1375,14 +1540,14 @@ Method of processing negative sentences.</Description>
 
 <Method name="ProcessFunctionalMarkers">
 <Description>
-The method analyzes the sentences of the sources on the functional markers and fills fields iKnowRating* in the iknowAL_Phones_Stat.Review table.</Description>
+The method analyzes the sentences of the sources on the functional markers and fills fields iKnowRating* in the ikra_Phones_Stat.Review table.</Description>
 <ClassMethod>1</ClassMethod>
 <FormalSpec>domName:%String,negation:%String="ignore"</FormalSpec>
 <Private>1</Private>
 <ReturnType>%Status</ReturnType>
 <Implementation><![CDATA[
 
-	set domainId = ##class(iknowAL.util.main).GetDomainId(domName)	
+	set domainId = ##class(ikra.util.main).GetDomainId(domName)	
 	
 	set length = ##class(%iKnow.Queries.SourceAPI).GetCountByDomain(domainId)
 	
@@ -1453,9 +1618,7 @@ The method analyzes the sentences of the sources on the functional markers and f
 			}
 			
 			// If we have a category (the first pass it does not exist), estimate the grade for this category.
-			if (markerCategory '= "") {	
-			
-				//write markerCategory, !		
+			if (markerCategory '= "") {		
 				
 				for i=1:1:length {
 					
@@ -1529,7 +1692,7 @@ The method analyzes the sentences of the sources on the functional markers and f
 				// Obtain the sentence values from table
 				&sql(SELECT Negation, Negative, Positive, SrcId 
 					 INTO :Negation, :sNegative, :sPositive, :srcId 
-					 FROM  iknowAL_Phones_Processing.Sentence 
+					 FROM  ikra_Phones_Processing.Sentence 
 					 WHERE SentenceId = :sentenceId AND DomainName = :domName)
 				
 				// If the query does not return anything go to next sentence
@@ -1538,7 +1701,7 @@ The method analyzes the sentences of the sources on the functional markers and f
 				// Skipping sentences with the negation, if specified the negation parameter
 				if ((negation = "exclude") && (Negation = -1)) { continue } 
 				elseif ((negation = "ignore") && (Negation = -1)) {
-					&sql(UPDATE iknowAL_Phones_Processing.Sentence (Negation, Negative, Positive)
+					&sql(UPDATE ikra_Phones_Processing.Sentence (Negation, Negative, Positive)
 					 	 VALUES(1, :sPositive, :sNegative)
 					 	 WHERE SentenceId = :sentenceId)
 					set temp = sPositive 
@@ -1570,9 +1733,10 @@ The method analyzes the sentences of the sources on the functional markers and f
 			set ^review(srcId,"iKnowEmarkersRating") = $SYSTEM.SQL.CEILING($normalize((^review(srcId,"totalPositive") / (^review(srcId,"totalPositive") + ^review(srcId,"totalNegative"))) * gradeMultiplier - 0.1, -1) + 1)
 		}
 				
-		&sql(SELECT phoneId INTO :phoneId FROM iknowAL_Phones_Stat.Review WHERE SourceId = :srcId)
+		//&sql(SELECT phoneId INTO :phoneId FROM ikra_Phones_Stat.Review WHERE SourceId = :srcId)
+		&sql(SELECT MIN(UID) INTO :phoneId FROM ikra_Dictionary.MarksReview WHERE RID = :srcId)
 		
-		set phoneName = ##class(%iKnow.Queries.MetadataAPI).GetValue(domainId, "PhoneName", ##class(%iKnow.Queries.SourceAPI).GetExternalId(domainId, srcId), .stn)
+		set phoneName = ##class(%iKnow.Queries.MetadataAPI).GetValue(domainId, "UnitName", ##class(%iKnow.Queries.SourceAPI).GetExternalId(domainId, srcId), .stn)
 		
 		set numberOfEntities = ##class(%iKnow.Queries.EntityAPI).GetCountBySource(domainId, srcId)
 		if (numberOfEntities = 0) { set numberOfEntities = 1 }
@@ -1582,43 +1746,17 @@ The method analyzes the sentences of the sources on the functional markers and f
 		
 		set emotionalSum = positiveMarkersSum + negativeMarkersSum
 		set numberOfSentences = ##class(%iKnow.Queries.SentenceAPI).GetCountBySource(domainId, srcId)
-		
-		/*if $data(^review(srcId,"iKnowRating")) {
-			set iKnowRating = ^review(srcId,"iKnowRating")
-			set iKnowEmarkersRating = ^review(srcId,"iKnowEmarkersRating")
-			set comfort = ^review(srcId,"Comfort")
-			set perfomance = ^review(srcId,"Perfomance")
-			set link = ^review(srcId,"Link")
-			set camera = ^review(srcId,"Camera")
-		}
-		else {*/
-			set iKnowRating = ""
-			set iKnowEmarkersRating = ""
-			set comfort = ""
-			set perfomance = ""
-			set link = ""
-			set camera = ""
-		//}
-		
-		
-		&sql(UPDATE iknowAL_Phones_Stat.Review (iKnowEmarkersRating, iKnowRating, iKnowRatingComfort, iKnowRatingPerfomance, 
-												iKnowRatingLink, iKnowRatingCamera)
-			 VALUES (:iKnowEmarkersRating, :iKnowRating, :comfort, :perfomance, :link, :camera) 
-			 WHERE SourceId = :srcId)
-		
-		&sql(INSERT INTO iknowAL_Phones_Stat.ReviewStat (ReviewId, PhoneId, PhoneName, NumberOfEntities, 
-		     EmotionalSum, NumberOfSentences, PositiveMarkersSum, NegativeMarkersSum)
-		     VALUES (:srcId, :phoneId, :phoneName, :numberOfEntities, :emotionalSum, 
-		             :numberOfSentences, :positiveMarkersSum, :negativeMarkersSum))
 		             
-		&sql(declare curCtg cursor for select id, ctgName into :ccID, :ccName from iknowal_dictionary.category)
+		&sql(declare curCtg cursor for select id, ctgName into :ccID, :ccName from ikra_dictionary.category)
    		&sql(open curCtg)
    		&sql(fetch curCtg)
+   		
+   		&sql(SELECT DISTINCT UID INTO :oID FROM ikra_Dictionary.MarksReview WHERE RID = :srcId)
 	
 		while (SQLCODE = 0) {
-			set domID = ##class(iknowAL.util.main).GetDomainId(domName)
+			set domID = ##class(ikra.util.main).GetDomainId(domName)
 			set catVal = ^review(srcId, ccName)
-			&sql(INSERT OR UPDATE INTO iknowAL_Dictionary.MarksReview(DomainID, UID, RID, CtgID, Mark)	
+			&sql(INSERT OR UPDATE INTO ikra_Dictionary.MarksReview(DomainID, UID, RID, CtgID, Mark)	
 			VALUES (:domID, :oID, :srcId, :ccID, :catVal))
 			&sql(fetch curCtg)
 		}
@@ -1638,26 +1776,11 @@ The method of calculating the final evaluation of phone.</Description>
 <Private>1</Private>
 <ReturnType>%Status</ReturnType>
 <Implementation><![CDATA[
-	kill phoneIdList
 	kill unitIdList
-	
-	// Obtain a list of all phones
-	&sql(DECLARE PhoneList Cursor FOR
-		 SELECT DISTINCT PhoneId INTO :tempPhoneId FROM iknowAL_Phones_Stat.Review ORDER BY PhoneId)
-		 
-	&sql(open PhoneList)
-	&sql(fetch PhoneList)
-	
-	while (SQLCODE = 0) {
-		set $list(phoneIdList,*+1) = tempPhoneId
-		&sql(fetch PhoneList)	
-	}
-	
-	&sql(close PhoneList)
 	
 	// Obtain a list of all objects	 
 	&sql(DECLARE UntList Cursor FOR
-		 SELECT DISTINCT UID INTO :tempUnitId FROM iknowAL_Dictionary.MarksReview ORDER BY UID)
+		 SELECT DISTINCT UID INTO :tempUnitId FROM ikra_Dictionary.MarksReview ORDER BY UID)
 	
 	&sql(open UntList)
 	&sql(fetch UntList)
@@ -1669,369 +1792,38 @@ The method of calculating the final evaluation of phone.</Description>
 	
 	&sql(close UntList)
 	
-	set length = $listlength(phoneIdList)
-	set untLength = $listlength(objectIdList)
+	set untLength = $listlength(unitIdList)
 
 	// Loop through all phones
-	for i=1:1:length
-	{
-	
-		set phoneId = $list(phoneIdList, i)
-		&sql(SELECT PhoneName INTO :phoneName FROM iknowAL_Phones_Stat.ReviewStat WHERE PhoneId = :phoneId)
-		
-		set objectId = $list(objectIdList, i)
-		&sql(SELECT PhoneName INTO :objectName FROM iknowAL_Phones_Stat.ReviewStat WHERE PhoneId = :objectId)
-		
+	for i=1:1:untLength
+	{			
 		set unitId = $list(unitIdList, i)
-		&sql(SELECT PhoneName INTO :unitName FROM iknowAL_Phones_Stat.ReviewStat WHERE PhoneId = :unitId)
-		
-		// Obtain the final evaluation of phone
-		&sql(SELECT AVG(NULLIF(iKnowRating, 0)), AVG(NULLIF(iKnowEmarkersRating,0)), AVG(NULLIF(iKnowRatingComfort,0)), AVG(NULLIF(iKnowRatingPerfomance, 0)),
-	            	AVG(NULLIF(iKnowRatingLink, 0)), AVG(NULLIF(iKnowRatingCamera,0)),
-	            	AVG(NULLIF(AuthorRating,0))
-        	 INTO :iKnowRating, :iKnowEmarkersRating, :iKnowRatingComfort, :iKnowRatingPerfomance,
-		     	  :iKnowRatingLink, :iKnowRatingCamera,
-		     	  :authorRating
-		     FROM iknowAL_Phones_Stat.Review
-		     WHERE PhoneId = :phoneId)
 		
 		// Obtain the final evaluation of phone
 		&sql(SELECT DISTINCT DomainID
         	 INTO :domID
-		     FROM iknowAL_Dictionary.MarksReview)
+		     FROM ikra_Dictionary.MarksReview)
 		
-		&sql(declare curCtg1 cursor for select id, ctgName into :ccID, :ccName from iknowal_dictionary.category)
+		&sql(SELECT MIN(RID) INTO :srcId FROM ikra_Dictionary.MarksReview WHERE UID = :unitId)     
+		set unitName = ##class(%iKnow.Queries.MetadataAPI).GetValue(domID, "UnitName", ##class(%iKnow.Queries.SourceAPI).GetExternalId(domID, srcId), .stn)
+		
+		&sql(declare curCtg1 cursor for select id, ctgName into :ccID, :ccName from ikra_dictionary.category)
    		&sql(open curCtg1)
    		&sql(fetch curCtg1)
 	
 		while (SQLCODE = 0) {
 			&sql(SELECT AVG(NULLIF(Mark, 0))
         	 INTO :avgUnt
-		     FROM iknowAL_Dictionary.MarksReview
-		     WHERE UID = :objectId & CtgID = :ccID)
+		     FROM ikra_Dictionary.MarksReview
+		     WHERE UID = :unitId & CtgID = :ccID)
 		     
-		    &sql(INSERT OR UPDATE INTO iknowAL_Dictionary.MarksUnit 
+		    &sql(INSERT OR UPDATE INTO ikra_Dictionary.MarksUnit 
 			 (DomainID, UID, UName, CtgID, Mark)
 			 VALUES (:domID, :unitId, :unitName, :ccID, :avgUnt))
 			&sql(fetch curCtg1)
 		}
 	
 		&sql(close curCtg1)
-		   
-		if ($data(^preferences("NEUTRALHIGHBORDER"))) {
-				set neutralHighBorder = ^preferences("NEUTRALHIGHBORDER")
-		} 
-		else {    
-			write "Settings data corruption.", !
-			return ERROR("Settings data corruption. Reload the domain or fix the settings data.")	
-		}
-		
-		if ($data(^preferences("NEUTRALLOWBORDER"))) {
-				set neutralLowBorder = ^preferences("NEUTRALLOWBORDER")
-		}
-		else {
-			write "Settings data corruption.", !
-			return ERROR("Settings data corruption. Reload the domain or fix the settings data.")	 
-		}
-	     
-		&sql(SELECT COUNT(ID) INTO :positiveReviews FROM iknowAL_Phones_Stat.Review WHERE PhoneId = :phoneId AND iKnowRating > :neutralHighBorder)
-		&sql(SELECT COUNT(ID) INTO :negativeReviews FROM iknowAL_Phones_Stat.Review WHERE PhoneId = :phoneId AND iKnowRating < :neutralLowBorder)
-		&sql(SELECT COUNT(ID) INTO :neutralReviews FROM iknowAL_Phones_Stat.Review WHERE PhoneId = :phoneId AND iKnowRating <= :neutralHighBorder AND iKnowRating >= :neutralLowBorder)
-		&sql(SELECT COUNT(ID) INTO :numberOfReviews FROM iknowAL_Phones_Stat.Review WHERE PhoneId = :phoneId AND iKnowRating > 0)
-		
-		set positiveReviewsPCT = 0
-		set negativeReviewsPCT = 0
-		set neutralReviewsPCT = 0
-		
-		if (numberOfReviews > 0) {
-			set positiveReviewsPCT = positiveReviews / numberOfReviews * 100
-			set negativeReviewsPCT = negativeReviews / numberOfReviews * 100
-			set neutralReviewsPCT = neutralReviews / numberOfReviews * 100
-		}
-		
-	    // Write the results in the table
-		&sql(INSERT OR UPDATE INTO iknowAL_Phones_Stat.Phone 
-			 (PhoneId, PhoneName, NegativeReviewsPCT, PositiveReviewsPCT, NeutralReviewsPCT,
-			  ReviewsCount, UserRating, iKnowRating, iKnowEmarkersRating, iKnowRatingComfort,
-			  iKnowRatingPerfomance, iKnowRatingLink, iKnowRatingCamera)
-			 VALUES (:phoneId, :phoneName, :negativeReviewsPCT, :positiveReviewsPCT, :neutralReviewsPCT,
-			 		 :numberOfReviews, :authorRating, :iKnowRating, :iKnowEmarkersRating, :iKnowRatingComfort, 
-			 		 :iKnowRatingPerfomance, :iKnowRatingLink, :iKnowRatingCamera))
-	}
-	
-	return $$$OK
-]]></Implementation>
-</Method>
-
-<Method name="ProcessingStats">
-<Description>
-Method, calculating the summary statistics and the statistics of phones (Emotional saturation).</Description>
-<ClassMethod>1</ClassMethod>
-<FormalSpec>domName:%String,negation:%String="exclude",calcAlgorithm:%String</FormalSpec>
-<Private>1</Private>
-<ReturnType>%Status</ReturnType>
-<Implementation><![CDATA[
-	
-	set domId = ##class(%iKnow.Domain).GetOrCreateId(domName)
-	
-	&sql(INSERT INTO iknowAL_Phones_Stat.PhoneStat (PhoneId, PhoneName, PositiveMarkersSum, NegativeMarkersSum, EmotionalSum, NumberOfEntities, NumberOfSentences)
-	     SELECT PhoneId, PhoneName, AVG(PositiveMarkersSum), AVG(NegativeMarkersSum), AVG(EmotionalSum), AVG(NumberOfEntities), AVG(NumberOfSentences)
-	     FROM iknowAL_Phones_Stat.ReviewStat
-	     GROUP BY PhoneId
-	)
-	
-	set processingResult = ##class(iknowAL.Phones.Stat.ProcessingResult).%New()
-	set processingResult.DomainName = domName
-	
-	// Counting lines in a file of emotional markers		
-	#dim filename As %String = ^iknowALDomainFolder(domName)_"Emarkers.txt"
-	#dim stream As %Stream.FileCharacter = ##class(%Stream.FileCharacter).%New()
-	set status = stream.LinkToFile(filename)
-	
-	set lineCounter = 0
-	
-	while '(stream.AtEnd) {
-		do stream.ReadLine()
-		set lineCounter = lineCounter + 1	
-	}
-	
-	set processingResult.EDictionarySize = lineCounter
-	
-	// Counting lines in a file of functional markers		
-	set filename  = ^iknowALDomainFolder(domName)_"Fmarkers.txt"
-	set stream = ##class(%Stream.FileCharacter).%New()
-	set status = stream.LinkToFile(filename)
-	
-	set lineCounter = 0
-	
-	while '(stream.AtEnd) {
-		do stream.ReadLine()
-		set lineCounter = lineCounter + 1	
-	}	
-	
-	set processingResult.FDictionarySize = lineCounter
-	
-	// Obtain the average value Emotional Saturation of all phones
-	&sql(SELECT AVG(EmotionalSaturation), AVG(PositiveEmotionalSaturation), AVG(NegativeEmotionalSaturation) 
-	     INTO :emotionalSaturation, :positiveEmotionalSaturation, :negativeEmotionalSaturation
-	     FROM iknowAL_Phones_Stat.PhoneStat)
-
-	set numOfSources = ##class(%iKnow.Queries.SourceAPI).GetCountByDomain(domId)
-	
-	set processingResult.EmotionalIndex = emotionalSaturation / processingResult.EDictionarySize * 1000
-	set processingResult.PositiveIndex = positiveEmotionalSaturation / processingResult.EDictionarySize * 1000
-	set processingResult.NegativeIndex = negativeEmotionalSaturation / processingResult.EDictionarySize * 1000
-	set processingResult.NumberOfSources = numOfSources	
-	set processingResult.Negation = negation	
-	set processingResult.CaclAlgorithm = calcAlgorithm
-	set processingResult.ProcessingDateTime = $zdatetime($h,3)
-	
-	&sql(SELECT %DLIST(UserRating), %DLIST(iKnowRating), 
-				%DLIST(iKnowRatingComfort), %DLIST(iKnowRatingPerfomance), 
-				%DLIST(iKnowRatingLink),%DLIST(iKnowRatingCamera)
-		 INTO :userRatingList, :iknowRatingList, 
-		 	  :iknowRatingComfortList, :iknowRatingPerfomanceList, 
-		 	  :iknowRatingLinkList, :iknowRatingCameraList
-		 FROM iknowAL_Phones_Stat.Phone
-		 ORDER BY PhoneId)
-	
-	/*if (($listlength(userRatingComfortList) > 0) && ($listlength(iknowRatingComfortList) > 0)) {
-		set processingResult.CorrelationComfort = ##class(iknowAL.Phones.Stat.Statistics).CorrelationCoefficient(userRatingComfortList, iknowRatingComfortList)
-	}*/
-	if (($listlength(userRatingList) > 0) && ($listlength(iknowRatingList) > 0)) {
-		set processingResult.CorrelationPhone = ##class(iknowAL.Phones.Stat.Statistics).CorrelationCoefficient(userRatingList, iknowRatingList)
-	}
-	/*if (($listlength(userRatingFoodList) > 0) && ($listlength(iknowRatingFoodList) > 0)) {
-		set processingResult.CorrelationFood = ##class(iknowAL.Phones.Stat.Statistics).CorrelationCoefficient(userRatingFoodList, iknowRatingFoodList)
-	}
-	if (($listlength(userRatingLocationList) > 0) && ($listlength(iknowRatingLocationList) > 0)) {
-		set processingResult.CorrelationLocation = ##class(iknowAL.Phones.Stat.Statistics).CorrelationCoefficient(userRatingLocationList, iknowRatingLocationList)
-	}
-	if (($listlength(userRatingServiceList) > 0) && ($listlength(iknowRatingServiceList) > 0)) {
-		set processingResult.CorrelationService = ##class(iknowAL.Phones.Stat.Statistics).CorrelationCoefficient(userRatingServiceList, iknowRatingServiceList)
-	}
-	if (($listlength(userRatingHospitalityList) > 0) && ($listlength(iknowRatingHospitalityList) > 0)) {
-		set processingResult.CorrelationHospitality = ##class(iknowAL.Phones.Stat.Statistics).CorrelationCoefficient(userRatingHospitalityList, iknowRatingHospitalityList)
-	}
-	if (($listlength(userRatingTerritoryList) > 0) && ($listlength(iknowRatingTerritoryList) > 0)) {
-		set processingResult.CorrelationTerritory = ##class(iknowAL.Phones.Stat.Statistics).CorrelationCoefficient(userRatingTerritoryList, iknowRatingTerritoryList)
-	}*/
-	
-	set tSC = processingResult.%Save()
-	
-	return tSC
-]]></Implementation>
-</Method>
-
-<Method name="ProcessSuspectAndUsefulness">
-<Description>
-The method loops through all the reviews and is calculated for each review the suspicion grade and usefulness grade.</Description>
-<ClassMethod>1</ClassMethod>
-<Private>1</Private>
-<ReturnType>%Status</ReturnType>
-<Implementation><![CDATA[
-	set tSC = $$$OK
-	
-	&sql(SELECT %DLIST(PhoneId) INTO :phoneIdList FROM iknowAL_Phones_Stat.Phone)	
-	
-	if (SQLCODE < 0) {
-		return $$$ERROR("Error during SQL query, SQLCODE: ", SQLCODE)	
-	} 
-	
-	set length = $listlength(phoneIdList)
-	
-	for i=1:1:length {
-		set tSC = ..DetectSuspectReviewsByPhone($list(phoneIdList, i))
-		
-		if (tSC '= $$$OK) {
-			write "Can't detect Suspect reviews for phone with PhoneID: ", $list(phoneIdList, i), !	
-		}
-		
-		set tSC = ..CalcReviewsUsefulness($list(phoneIdList,i))
-	}
-	
-	return tSC
-]]></Implementation>
-</Method>
-
-<Method name="DetectSuspectReviewsByPhone">
-<Description>
-The method of calculating an estimate of suspicion of each review.</Description>
-<ClassMethod>1</ClassMethod>
-<FormalSpec>phoneId:%Integer</FormalSpec>
-<Private>1</Private>
-<ReturnType>%Status</ReturnType>
-<Implementation><![CDATA[
-	if ($data(^preferences("GRADESUSPECTDIFF"))) {
-		if ($ISVALIDNUM(^preferences("GRADESUSPECTDIFF"))) {
-			set gradeSuspectDiff = ^preferences("GRADESUSPECTDIFF")
-		}
-		else {
-			write "GRADEMULTIPLIER is not valid number. Use default settings", !
-			set gradeSuspectDiff = ^preferences("GRADESUSPECTDIFF")
-		}
-	}	 
-	else {
-		write "Settings data corruption.", !
-		return ERROR("Settings data corruption. GRADESUSPECT Parameter is missing. Reload the domain or fix the settings data.")	
-	}
-	
-	&sql(SELECT %DLIST(PositiveEmotionalSaturation) INTO :pesList FROM iknowAL_Phones_Stat.ReviewStat WHERE PhoneId = :phoneId)
-	&sql(SELECT AVG(iKnowRating) INTO :meanRating FROM iknowAL_Phones_Stat.Review WHERE PhoneId = :phoneId)
-	
-	set stdDev = ##class(iknowAL.Phones.Stat.Statistics).StdDev(pesList)
-	set mean = ##class(iknowAL.Phones.Stat.Statistics).Mean(pesList)
-	
-	&sql(SELECT %DLIST(ID) INTO :idList FROM iknowAL_Phones_Stat.ReviewStat WHERE PhoneId = :phoneId)
-	
-	if ($data(^preferences("PESSUSPECT"))) {
-			set pesSuspect = ^preferences("PESSUSPECT")
-	}
-	else {
-		write "Settings data corruption.", !
-		return ERROR("Settings data corruption. Reload the domain or fix the settings data.")	
-	}
-	
-	set length = $listlength(idList)
-	
-	for i=1:1:length {
-
-		 set suspect = 0
-
-	     set reviewStat = ##class(iknowAL.Phones.Stat.ReviewStat).%OpenId($list(idList, i))	
-	     
-	     if (reviewStat.EmotionalSaturation = 0) { continue }		 
-		 if ('($data(stdDev)) || (stdDev = 0)) { continue }
-	     
-	     if (($zabs(reviewStat.PositiveEmotionalSaturation - mean)) > (3 * stdDev)) {
-		     set suspect = suspect + 1
-	     }
-	     
-	     
-	     if ((reviewStat.PositiveEmotionalSaturation / reviewStat.EmotionalSaturation) > pesSuspect) {
-		     set suspect = suspect + 1
-	     }
-	     
-	     if (reviewStat.iKnowRating - mean > gradeSuspectDiff) {
-	     	set suspect = suspect + 1
-	     }
-	     
-	     set reviewId = reviewStat.ReviewId 
-
-		 &sql(UPDATE iknowAL_Phones_Stat.Review SET Suspect = :suspect WHERE SourceId = :reviewId)
-
-		 kill reviewStat	 
-	}
-	
-	return $$$OK
-]]></Implementation>
-</Method>
-
-<Method name="CalcReviewsUsefulness">
-<Description>
-The method of calculating an assessment of the usefulness of each review.</Description>
-<ClassMethod>1</ClassMethod>
-<FormalSpec>phoneId:%Integer</FormalSpec>
-<Private>1</Private>
-<ReturnType>%Status</ReturnType>
-<Implementation><![CDATA[
-	set usefulness = 0
-	set us1 = 0
-	set us2 = 0
-	set us3 = 0
-	
-	&sql(SELECT %DLIST(EmotionalSaturation), %DLIST(ID) INTO :esList, :idList FROM iknowAL_Phones_Stat.ReviewStat WHERE PhoneId = :phoneId)	
-	
-	if ($listlength(esList) > 0) {
-		set meanES = ##class(iknowAL.Phones.Stat.Statistics).Mean(esList)
-		set stdevES = ##class(iknowAL.Phones.Stat.Statistics).StdDev(esList)
-	}
-	else {
-		return $$$OK
-	}
-	
-	set length = $listlength(idList)
-	
-	for i=1:1:length {
-	
-	     set reviewStat = ##class(iknowAL.Phones.Stat.ReviewStat).%OpenId($list(idList, i))	
-	     
-	     if (reviewStat.EmotionalSaturation = 0) { continue }
-	
-		 if (('$data(stdevES) || (stdevES = 0))) { 
-		 	set us1 = 0 
-		 }
-		 else {
-		 	set us1 = 1 - (($zabs(reviewStat.EmotionalSaturation - meanES)) / (3 * stdevES)) 
-		 }
-		 
-		 if (us1 < 0) { 
-		 	set us1 = 0 
-		 }
-		 
-	     set reviewId = reviewStat.ReviewId 
-		 
- 		 &sql(SELECT iKnowRatingPerfomance, iKnowRatingComfort, iKnowRatingLink, iKnowRatingCamera
- 		 	  INTO :perfomance, :comfort, :link, :camera 
- 		 	  FROM iknowAL_Phones_Stat.Review WHERE SourceId = :reviewId)
-		   
-		 set us2 = $case(perfomance, "":0, :1) + $case(comfort, "":0, :1) + $case(link, "":0, :1) + $case(camera, "":0, :1)
-		   
-		 set us2 = us2 / 4
-		 
-		 if (reviewStat.PositiveEmotionalSaturation >= reviewStat.NegativeEmotionalSaturation) {
-			 set us3 = 2 * (reviewStat.NegativeEmotionalSaturation / reviewStat.EmotionalSaturation)
-		 }
-		 else {
-			 set us3 = 2 * (reviewStat.PositiveEmotionalSaturation / reviewStat.EmotionalSaturation)
-		 }
-		 
-		 kill reviewStat
-		 		 
-		 set usefulness = (us1 + us2 + us3) / 3 * 100
-		 
-		 &sql(UPDATE iknowAL_Phones_Stat.Review SET Usefulness = :usefulness WHERE SourceId = :reviewId)
-		 
 	}
 	
 	return $$$OK
@@ -2046,342 +1838,15 @@ Method of clearing the Sentence table.</Description>
 <ReturnType>%Status</ReturnType>
 <Implementation><![CDATA[
 		
-	set tSC = ##class(iknowAL.Phones.Processing.Sentence).%KillExtent()
+	set tSC = ##class(ikra.Phones.Processing.Sentence).%KillExtent()
 	
 	return tSC
-]]></Implementation>
-</Method>
-
-<Method name="ClearStats">
-<Description>
-Method of clearing statistics (ReviewStat and PhoneStat tables).</Description>
-<ClassMethod>1</ClassMethod>
-<Private>1</Private>
-<ReturnType>%Status</ReturnType>
-<Implementation><![CDATA[
-	set tSC = $$$OK
-	
-	set tST = ##class(iknowAL.Phones.Stat.ReviewStat).%KillExtent()
-	
-	if (tST '= $$$OK ) {
-		set tSC = $$$ERROR("Can't KillExtent for iknowAL.Phones.Stat.ReviewStat")	
-	}
-	
-	set tST = ##class(iknowAL.Phones.Stat.PhoneStat).%KillExtent()
-	
-	if (tST '= $$$OK ) {
-		set tSC = $$$ERROR("Can't KillExtent for iknowAL.Phones.Stat.PhoneStat")	
-	}
-	
-	return tSC
-]]></Implementation>
-</Method>
-
-<UDLText name="T">
-<Content><![CDATA[
-// Need to refactoring and optimization.
-
-]]></Content>
-</UDLText>
-
-<Method name="GetCategoryDetail">
-<Description>
-The method of collecting the List of all setences ID that mention the most sread concept in choosen category of the specified phone
-and writing this List to the Phone table.
-numberOfWordsInSentence - maximum number of words in a single sentence.</Description>
-<ClassMethod>1</ClassMethod>
-<FormalSpec>domName:%String,phoneId:%Integer,categoryName:%String,numberOfWordsInSentence:%Integer</FormalSpec>
-<Private>1</Private>
-<ReturnType>%Status</ReturnType>
-<Implementation><![CDATA[
-	set domainId = ##class(iknowAL.util.main).GetDomainId(domName)
-	set markerCategory = ""
-	
-	// Set the filter with PhoneId
-	set filter = ##class(%iKnow.Filters.SimpleMetadataFilter).%New(domainId, "PhoneId","=",phoneId)	
-	
-	// Set the flag to 0
-	set categoryFound = 0
-	
-	set p1 = ""
-		
-	for
-	{	
-		set p1 = $order(^fmarkers(p1))
-		quit:(p1 = "")
-		
-		set line = ^fmarkers(p1)
-	
-		// Check, does a string begin with a "!" (! - comment)	
-		set checkComment = $piece(line,"!",1,1)
-		if (checkComment="") { continue }
-
-		set stype = $piece(line,"#",1)
-		
-		if (stype = "d") { continue }
-		// Processing the string with the category name
-		elseif (stype = "i") {
-			
-			// Obtain the name of the next category
-			set markerCategory = $piece(line,"#",2)
-	
-			if (categoryName '= markerCategory) { continue }
-			else {
-				set categoryFound = 1 
-			}
-		}
-		// Processing the string with term(entity)
-		elseif (stype="t") {
-			if (categoryName '= markerCategory) { continue }
-			
-			set currentEntity = $piece(line,"#",2)	
-			set entityId = ##class(%iKnow.Queries.EntityAPI).GetId(domainId,currentEntity)
-		
-			if (entityId = "") { continue }			
-						
-			set $list(entityIdList, *+1) = entityId			
-		}
-	}
-	
-	if (categoryFound = 0) { 
-		return $$$ERROR("There is no choosen category.") 
-	}
-	
-	kill srcResult
-	
-	// Obtain all Sources (filtered by phone)
-	do ##class(%iKnow.Queries.SourceAPI).GetByDomain(.srcResult, domainId, 1, 0, filter)
-	
-	// Obtain the number of Sources (filtered by phone)
-	set numberOfReviews = ##class(%iKnow.Queries.SourceAPI).GetCountByDomain(domainId, filter)
-	
-	for i=1:1:numberOfReviews {
-		set $list(srcIdList, *+1) = $list(srcResult(i), 1)	
-	}
-	
-	set srcIdFilter = ##class(%iKnow.Filters.SourceIdFilter).%New(domainId, srcIdList)
-	
-	kill result
-					
-	set iKnowCategory = "iKnowRating"_categoryName			
-
-	// Obtain a list of sentences in the source containing this entity						
-	do ##class(%iKnow.Queries.SentenceAPI).GetByEntityIds(.result, domainId, entityIdList, srcIdFilter, 1, 0)					
-
-	set p2 = ""
-							
-	// Loop through the sentences contained most spread Entity
-	for 
-	{					
-		set p2 = $order(result(p2))	
-		quit:(p2 = "")
-				
-		set sentenceId = $list(result(p2), 3)	
-		
-		// Obtain Negation of current sentence
-		&sql(SELECT Negation INTO :negation FROM  iknowAL_Phones_Processing.Sentence WHERE SentenceId = :sentenceId AND DomainName = :domName)
-		
-		if (SQLCODE = 100) { continue }
-		if (negation = -1) { continue } 
-		
-		set currentSentence = ##class(%iKnow.Queries.SentenceAPI).GetValue(domainId, sentenceId)
-
-		set sentenceLength = $length(currentSentence, " ")
-		
-		if (sentenceLength < numberOfWordsInSentence) {
-			set $list(allResult,*+1) = sentenceId
-		}
-							
-	 }	// for (Sentence)
-	
-	&sql(SELECT id INTO :phoneObjId FROM iknowAL_Phones_Stat.Phone WHERE PhoneId = :phoneId)
-
-	if (SQLCODE = 0) {
-		set phone = ##class(iknowAL.Phones.Stat.Phone).%OpenId(phoneObjId)
-	}		
-	elseif (SQLCODE = 100) { return $$$ERROR() }
-		
-	set property = "Sent"_categoryName
-	
-	if ($data(allResult)) {
-		set $property(phone,property) = allResult
-	}
-	
-	do phone.%Save()
-	kill phone
-	
-	return $$$OK
-]]></Implementation>
-</Method>
-
-<Method name="ProcessAllPhonesSentences">
-<Description>
-Method of collecting all sentences for all categories of all phones.
-numberOfWordsInSentence - maximum number of words in a single sentence.</Description>
-<ClassMethod>1</ClassMethod>
-<FormalSpec>domName:%String,numberOfWordsInSentence:%Integer=15</FormalSpec>
-<ReturnType>%Status</ReturnType>
-<Implementation><![CDATA[
-		&sql(SELECT %DLIST(PhoneId) INTO :phoneIdList FROM iknowAL_Phones_Stat.Phone)
-
-		set length = $listlength(phoneIdList)
-		
-		for i=1:1:length {
-			for categoryName = "Comfort","Perfomance","Line","Camera" {
-				do ..GetCategoryDetail(domName, $list(phoneIdList,i), categoryName, numberOfWordsInSentence)
-			}	
-		}
-		
-		return $$$OK
-]]></Implementation>
-</Method>
-
-<Method name="GetRandomSentences">
-<Description>
-A method that returns a random user sentences for specifeied category in specified phone.</Description>
-<ClassMethod>1</ClassMethod>
-<FormalSpec>domName:%String,phoneId:%Integer,categoryName:%String,numberOfResults:%Integer=1</FormalSpec>
-<ReturnType>%List</ReturnType>
-<Implementation><![CDATA[
-	&sql(SELECT id INTO :phoneObjId FROM iknowAL_Phones_Stat.Phone WHERE PhoneId = :phoneId)
-	
-	if (SQLCODE = 100) { 
-		return "" 
-	}
-	elseif (SQLCODE = 0) {
-		set phone = ##class(iknowAL.Phones.Stat.Phone).%OpenId(phoneObjId)
-	}		
-	
-	set property = "Sent"_categoryName
-	
-	set allResult = $property(phone,property)
-	kill phone
-	
-	if (allResult = "") {
-		return ""	
-	}
-	
-	set count = 0
-	
-	while ((count < numberOfResults) && (count < ($listlength(allResult))))
-	{
-	
-		set domainId = ##class(iknowAL.util.main).GetDomainId(domName)	
-		
-		set rnd = $random($listlength(allResult)) + 1
-		
-		if ($data(alreadyInResultList)) {
-			if ($listfind(alreadyInResultList, rnd) '= 0) { continue }
-		}
-		
-		set $list(topResult,*+1) = ##class(%iKnow.Queries.SentenceAPI).GetValue(domainId, $list(allResult, rnd))
-		set $list(alreadyInResultList,*+1) = rnd
-		
-		set count = count + 1
-	}
-	
-	return topResult
-]]></Implementation>
-</Method>
-
-<Method name="GetRandomSentenceByEntity">
-<Description>
-The method of returning the random Sentence mention the specified entity of the specified phone.
-numberOfWordsInSentence - maximum number of words in a single sentence.</Description>
-<ClassMethod>1</ClassMethod>
-<FormalSpec>domName:%String,phoneId:%Integer,entity:%String,numberOfWordsInSentence:%Integer=15</FormalSpec>
-<ReturnType>%String</ReturnType>
-<Implementation><![CDATA[
-	set domainId = ##class(iknowAL.util.main).GetDomainId(domName)	
-	
-	// Set the filter with PhoneId
-	set filter = ##class(%iKnow.Filters.SimpleMetadataFilter).%New(domainId, "PhoneId","=",phoneId)	
-	
-	set entityId = ##class(%iKnow.Queries.EntityAPI).GetId(domainId, entity)
-		
-	if (entityId = "") { 
-		write "There is no entity """, entity, """ in the Reviews for this Phone", !
-		return ""
-	}			
-						
-	set $list(entityIdList, *+1) = entityId			
-
-	kill srcResult
-	
-	// Obtain all Sources (filtered by phone)
-	do ##class(%iKnow.Queries.SourceAPI).GetByDomain(.srcResult, domainId, 1, 0, filter)
-	
-	// Obtain the number of Sources (filtered by phone)
-	set numberOfReviews = ##class(%iKnow.Queries.SourceAPI).GetCountByDomain(domainId, filter)
-	
-	for i=1:1:numberOfReviews {
-		set $list(srcIdList, *+1) = $list(srcResult(i), 1)	
-	}
-	
-	set srcIdFilter = ##class(%iKnow.Filters.SourceIdFilter).%New(domainId, srcIdList)
-	
-	kill result
-	kill similarResult
-	
-	do ##class(%iKnow.Queries.EntityAPI).GetSimilar(.similarResult, domainId, entity, 1, 0, filter, ,$$$USEWORDS)
-	
-	set p1 = ""
-	
-	for {
-		set p1 = $order(similaresult(p1))	
-		quit:(p1 = "")
-		
-		set $list(entityIdList, *+1) = similarResult(p1)
-	}
-	
-	// Obtain a list of sentences in the source containing this entity						
-	do ##class(%iKnow.Queries.SentenceAPI).GetByEntityIds(.result, domainId, entityIdList, srcIdFilter, 1, 0)	
-	
-	if '($data(result(1))) { 
-		write "There is no entity """, entity, """ in the Reviews for this Phone", !
-		return ""
-	}				
-
-	set p2 = ""
-						
-	// Loop through the sentences contained Entity
-	for {					
-		set p2 = $order(result(p2))	
-		quit:(p2 = "")
-				
-		set sentenceId = $list(result(p2), 3)	
-		
-		// Obtain Negation of current sentence
-		&sql(SELECT Negation INTO :negation FROM  iknowAL_Phones_Processing.Sentence WHERE SentenceId = :sentenceId AND DomainName = :domName)
-		
-		if (SQLCODE = 100) { continue }
-		if (negation = -1) { continue } 
-		
-		set currentSentence = ##class(%iKnow.Queries.SentenceAPI).GetValue(domainId, sentenceId)
-
-		set sentenceLength = $length(currentSentence, " ")
-		
-		if (sentenceLength < numberOfWordsInSentence) {
-			set $list(allResult,*+1) = sentenceId
-		}
-							
-	 }	// for (Sentence)
-
-	
-	if '($data(allResult)) {
-		write "There is no Sentences mention specified numberOfWordsInSentence parameter", !
-		return ""
-	}
-	
-	set rnd = $random($listlength(allResult)) + 1
-
-	return ##class(%iKnow.Queries.SentenceAPI).GetValue(domainId, $list(allResult, rnd))
 ]]></Implementation>
 </Method>
 </Class>
 
 
-<Class name="iknowAL.Phones.Processing.Sentence">
+<Class name="ikra.Phones.Processing.Sentence">
 <Super>%Persistent</Super>
 <TimeChanged>63703,50855.75955</TimeChanged>
 <TimeCreated>63703,50855.590397</TimeCreated>
@@ -2442,11 +1907,11 @@ The Negation flag.</Description>
 
 <Storage name="Default">
 <Type>%Library.CacheStorage</Type>
-<DataLocation>^iknowAL.Phones.PrC684.SentenceD</DataLocation>
+<DataLocation>^ikra.Phones.PrC684.SentenceD</DataLocation>
 <DefaultData>SentenceDefaultData</DefaultData>
-<IdLocation>^iknowAL.Phones.PrC684.SentenceD</IdLocation>
-<IndexLocation>^iknowAL.Phones.PrC684.SentenceI</IndexLocation>
-<StreamLocation>^iknowAL.Phones.PrC684.SentenceS</StreamLocation>
+<IdLocation>^ikra.Phones.PrC684.SentenceD</IdLocation>
+<IndexLocation>^ikra.Phones.PrC684.SentenceI</IndexLocation>
+<StreamLocation>^ikra.Phones.PrC684.SentenceS</StreamLocation>
 <Data name="SentenceDefaultData">
 <Structure>listnode</Structure>
 <Subscript/>
@@ -2482,7 +1947,7 @@ The Negation flag.</Description>
 </Class>
 
 
-<Class name="iknowAL.Phones.Stat.Phone">
+<Class name="ikra.Phones.Stat.Phone">
 <Super>%Persistent,%XML.Adaptor</Super>
 <TimeChanged>63708,42212.51254</TimeChanged>
 <TimeCreated>63703,49903.949929</TimeCreated>
@@ -2631,7 +2096,7 @@ A list of sentences from the reviews characterizing camera of the hotel.</Descri
 	            iKnowRatingHospitality, iKnowRatingLocation, iKnowRatingService, iKnowRatingTerritory 
 	     INTO :id, :iKnowRating, :iKnowEmarkersRating, :iKnowRatingComfort, :iKnowRatingFood,
 	     	  :iKnowRatingHospitality, :iKnowRatingLocation, :iKnowRatingService, :iKnowRatingTerritory
-	     FROM iknowAV_Hotels_Stat.Review
+	     FROM ikra_Hotels_Stat.Review
 	     WHERE HotelId = :hotelId
 	)	
 	
@@ -2675,7 +2140,7 @@ A list of sentences from the reviews characterizing camera of the hotel.</Descri
 	}
 	
 	// Obtain Hotel name.
-	&sql(SELECT HotelName INTO :hotelName FROM iknowAV_Hotels_Stat.Hotel WHERE HotelId = :hotelId)
+	&sql(SELECT HotelName INTO :hotelName FROM ikra_Hotels_Stat.Hotel WHERE HotelId = :hotelId)
 	
 	// Получаем обращение, в зависимости от числа
 	set lastChar = $extract(reviewCount,*-0)
@@ -2859,11 +2324,11 @@ A list of sentences from the reviews characterizing camera of the hotel.</Descri
 The method of obtaining the final phrase about the phone.
 phoneId - Phone ID</Description>
 <Type>%Library.CacheStorage</Type>
-<DataLocation>^iknowAL.Phones.Stat.PhoneD</DataLocation>
+<DataLocation>^ikra.Phones.Stat.PhoneD</DataLocation>
 <DefaultData>PhoneDefaultData</DefaultData>
-<IdLocation>^iknowAL.Phones.Stat.PhoneD</IdLocation>
-<IndexLocation>^iknowAL.Phones.Stat.PhoneI</IndexLocation>
-<StreamLocation>^iknowAL.Phones.Stat.PhoneS</StreamLocation>
+<IdLocation>^ikra.Phones.Stat.PhoneD</IdLocation>
+<IndexLocation>^ikra.Phones.Stat.PhoneI</IndexLocation>
+<StreamLocation>^ikra.Phones.Stat.PhoneS</StreamLocation>
 <Data name="PhoneDefaultData">
 <Value name="1">
 <Value>%%CLASSNAME</Value>
@@ -2924,7 +2389,7 @@ phoneId - Phone ID</Description>
 </Class>
 
 
-<Class name="iknowAL.Phones.Stat.PhoneStat">
+<Class name="ikra.Phones.Stat.PhoneStat">
 <Super>%Persistent</Super>
 <TimeChanged>63703,50457.626347</TimeChanged>
 <TimeCreated>63703,50455.952538</TimeCreated>
@@ -3015,11 +2480,11 @@ Negative emotional saturation of the review.</Description>
 
 <Storage name="Default">
 <Type>%Library.CacheStorage</Type>
-<DataLocation>^iknowAL.Phones.Stat.PhoneStatD</DataLocation>
+<DataLocation>^ikra.Phones.Stat.PhoneStatD</DataLocation>
 <DefaultData>PhoneStatDefaultData</DefaultData>
-<IdLocation>^iknowAL.Phones.Stat.PhoneStatD</IdLocation>
-<IndexLocation>^iknowAL.Phones.Stat.PhoneStatI</IndexLocation>
-<StreamLocation>^iknowAL.Phones.Stat.PhoneStatS</StreamLocation>
+<IdLocation>^ikra.Phones.Stat.PhoneStatD</IdLocation>
+<IndexLocation>^ikra.Phones.Stat.PhoneStatI</IndexLocation>
+<StreamLocation>^ikra.Phones.Stat.PhoneStatS</StreamLocation>
 <Data name="PhoneStatDefaultData">
 <Structure>listnode</Structure>
 <Subscript/>
@@ -3052,7 +2517,7 @@ Negative emotional saturation of the review.</Description>
 </Class>
 
 
-<Class name="iknowAL.Phones.Stat.ProcessingResult">
+<Class name="ikra.Phones.Stat.ProcessingResult">
 <Super>%Persistent</Super>
 <TimeChanged>63703,58538.613872</TimeChanged>
 <TimeCreated>63703,49792.627948</TimeCreated>
@@ -3137,11 +2602,11 @@ Timestamp of processing endtime.</Description>
 
 <Storage name="Default">
 <Type>%Library.CacheStorage</Type>
-<DataLocation>^iknowAL.PhE6BE.ProcessingRCBCAD</DataLocation>
+<DataLocation>^ikra.PhE6BE.ProcessingRCBCAD</DataLocation>
 <DefaultData>ProcessingResultDefaultData</DefaultData>
-<IdLocation>^iknowAL.PhE6BE.ProcessingRCBCAD</IdLocation>
-<IndexLocation>^iknowAL.PhE6BE.ProcessingRCBCAI</IndexLocation>
-<StreamLocation>^iknowAL.PhE6BE.ProcessingRCBCAS</StreamLocation>
+<IdLocation>^ikra.PhE6BE.ProcessingRCBCAD</IdLocation>
+<IndexLocation>^ikra.PhE6BE.ProcessingRCBCAI</IndexLocation>
+<StreamLocation>^ikra.PhE6BE.ProcessingRCBCAS</StreamLocation>
 <Data name="ProcessingResultDefaultData">
 <Value name="1">
 <Value>%%CLASSNAME</Value>
@@ -3196,7 +2661,7 @@ Timestamp of processing endtime.</Description>
 </Class>
 
 
-<Class name="iknowAL.Phones.Stat.Review">
+<Class name="ikra.Phones.Stat.Review">
 <Super>%Persistent</Super>
 <TimeChanged>63865,6065.779989</TimeChanged>
 <TimeCreated>63702,54586.010689</TimeCreated>
@@ -3279,11 +2744,11 @@ Estimated rating of camera.</Description>
 
 <Storage name="Default">
 <Type>%Library.CacheStorage</Type>
-<DataLocation>^iknowAL.Phones.Stat.ReviewD</DataLocation>
+<DataLocation>^ikra.Phones.Stat.ReviewD</DataLocation>
 <DefaultData>ReviewDefaultData</DefaultData>
-<IdLocation>^iknowAL.Phones.Stat.ReviewD</IdLocation>
-<IndexLocation>^iknowAL.Phones.Stat.ReviewI</IndexLocation>
-<StreamLocation>^iknowAL.Phones.Stat.ReviewS</StreamLocation>
+<IdLocation>^ikra.Phones.Stat.ReviewD</IdLocation>
+<IndexLocation>^ikra.Phones.Stat.ReviewI</IndexLocation>
+<StreamLocation>^ikra.Phones.Stat.ReviewS</StreamLocation>
 <Data name="ReviewDefaultData">
 <Structure>listnode</Structure>
 <Subscript/>
@@ -3331,7 +2796,7 @@ Estimated rating of camera.</Description>
 </Class>
 
 
-<Class name="iknowAL.Phones.Stat.ReviewStat">
+<Class name="ikra.Phones.Stat.ReviewStat">
 <Super>%Persistent</Super>
 <TimeChanged>63703,49513.090733</TimeChanged>
 <TimeCreated>63703,49474.95789</TimeCreated>
@@ -3436,11 +2901,11 @@ Negative emotional saturation of the review.</Description>
 
 <Storage name="Default">
 <Type>%Library.CacheStorage</Type>
-<DataLocation>^iknowAV.Hotels4531.ReviewStatD</DataLocation>
+<DataLocation>^ikra.Hotels4531.ReviewStatD</DataLocation>
 <DefaultData>ReviewStatDefaultData</DefaultData>
-<IdLocation>^iknowAV.Hotels4531.ReviewStatD</IdLocation>
-<IndexLocation>^iknowAV.Hotels4531.ReviewStatI</IndexLocation>
-<StreamLocation>^iknowAV.Hotels4531.ReviewStatS</StreamLocation>
+<IdLocation>^ikra.Hotels4531.ReviewStatD</IdLocation>
+<IndexLocation>^ikra.Hotels4531.ReviewStatI</IndexLocation>
+<StreamLocation>^ikra.Hotels4531.ReviewStatS</StreamLocation>
 <Data name="ReviewStatDefaultData">
 <Value name="1">
 <Value>%%CLASSNAME</Value>
@@ -3483,7 +2948,7 @@ Negative emotional saturation of the review.</Description>
 </Class>
 
 
-<Class name="iknowAL.Phones.Stat.Statistics">
+<Class name="ikra.Phones.Stat.Statistics">
 <Super>%RegisteredObject</Super>
 <TimeChanged>63703,49651.125451</TimeChanged>
 <TimeCreated>63703,49651.125451</TimeCreated>
@@ -3578,9 +3043,9 @@ Negative emotional saturation of the review.</Description>
 </Class>
 
 
-<Class name="iknowAL.REST.Broker">
+<Class name="ikra.REST.Broker">
 <Super>%CSP.REST</Super>
-<TimeChanged>63928,59158.766129</TimeChanged>
+<TimeChanged>63943,35990.996167</TimeChanged>
 <TimeCreated>63897,66797.1437</TimeCreated>
 
 <XData name="UrlMap">
@@ -3589,25 +3054,28 @@ Negative emotional saturation of the review.</Description>
 
  <Route Url="/category" Method="GET" Call="Category"/>
  
- <Route Url="/json/category" Method="GET" Call="iknowAL.REST.JSON:GetAllCategories"/>
- <Route Url="/json/newcategory" Method="POST" Call="iknowAL.REST.JSON:CreateCategory"/>
- <Route Url="/json/category/:catid" Method="DELETE" Call="iknowAL.REST.JSON:DeleteCategory"/>
- <Route Url="/json/category/:catid" Method="PUT" Call="iknowAL.REST.JSON:UpdateCategory"/>
+ <Route Url="/json/category" Method="GET" Call="ikra.REST.JSON:GetAllCategories"/>
+ <Route Url="/json/newcategory" Method="POST" Call="ikra.REST.JSON:CreateCategory"/>
+ <Route Url="/json/category/:catid" Method="DELETE" Call="ikra.REST.JSON:DeleteCategory"/>
+ <Route Url="/json/category/:catid" Method="PUT" Call="ikra.REST.JSON:UpdateCategory"/>
  
- <Route Url="/json/concept/:cncptid" Method="GET" Call="iknowAL.REST.JSON:GetAllConcepts"/>
- <Route Url="/json/newconcept" Method="POST" Call="iknowAL.REST.JSON:CreateConcept"/>
- <Route Url="/json/concept/:cncptid" Method="DELETE" Call="iknowAL.REST.JSON:DeleteConcept"/>
- <Route Url="/json/concept/:cncptid" Method="PUT" Call="iknowAL.REST.JSON:UpdateConcept"/>
+ <Route Url="/json/concept/:cncptid" Method="GET" Call="ikra.REST.JSON:GetAllConcepts"/>
+ <Route Url="/json/newconcept" Method="POST" Call="ikra.REST.JSON:CreateConcept"/>
+ <Route Url="/json/concept/:cncptid" Method="DELETE" Call="ikra.REST.JSON:DeleteConcept"/>
+ <Route Url="/json/concept/:cncptid" Method="PUT" Call="ikra.REST.JSON:UpdateConcept"/>
  
- <Route Url="/json/emotion" Method="GET" Call="iknowAL.REST.JSON:GetAllEmotions"/>
- <Route Url="/json/newemotion" Method="POST" Call="iknowAL.REST.JSON:CreateEmotion"/>
- <Route Url="/json/emotion/:emtid" Method="DELETE" Call="iknowAL.REST.JSON:DeleteEmotion"/>
- <Route Url="/json/emotion/:emtid" Method="PUT" Call="iknowAL.REST.JSON:UpdateEmotion"/>
+ <Route Url="/json/emotion" Method="GET" Call="ikra.REST.JSON:GetAllEmotions"/>
+ <Route Url="/json/newemotion" Method="POST" Call="ikra.REST.JSON:CreateEmotion"/>
+ <Route Url="/json/emotion/:emtid" Method="DELETE" Call="ikra.REST.JSON:DeleteEmotion"/>
+ <Route Url="/json/emotion/:emtid" Method="PUT" Call="ikra.REST.JSON:UpdateEmotion"/>
  
- <Route Url="/uploadF" Method="POST" Call="iknowAL.REST.JSON:UploadFileFunctional"/>
- <Route Url="/uploadE" Method="POST" Call="iknowAL.REST.JSON:UploadFileEmotion"/>
- <Route Url="/downloadF" Method="GET" Call="iknowAL.REST.JSON:DownloadFileFunctional"/>
- <Route Url="/downloadE" Method="GET" Call="iknowAL.REST.JSON:DownloadFileEmotion"/>
+ <Route Url="/uploadF" Method="POST" Call="ikra.REST.JSON:UploadFileFunctional"/>
+ <Route Url="/uploadE" Method="POST" Call="ikra.REST.JSON:UploadFileEmotion"/>
+ <Route Url="/downloadF" Method="GET" Call="ikra.REST.JSON:DownloadFileFunctional"/>
+ <Route Url="/downloadE" Method="GET" Call="ikra.REST.JSON:DownloadFileEmotion"/>
+ 
+ <Route Url="/json/domains" Method="GET" Call="ikra.REST.JSON:GetAllDomainNames"/>
+ <Route Url="/json/compute/:domName" Method="POST" Call="ikra.REST.JSON:StartCompute"/>
  
  </Routes>
 ]]></Data>
@@ -3617,7 +3085,7 @@ Negative emotional saturation of the review.</Description>
 <ClassMethod>1</ClassMethod>
 <ReturnType>%Status</ReturnType>
 <Implementation><![CDATA[
-	/*<Route Url="/json/categoryid" Method="GET" Call="iknowAL.REST.JSON:GetMaxIdCategory"/>*/
+	/*<Route Url="/json/categoryid" Method="GET" Call="ikra.REST.JSON:GetMaxIdCategory"/>*/
     &html<Работает!>
     quit $$$OK
 ]]></Implementation>
@@ -3625,9 +3093,9 @@ Negative emotional saturation of the review.</Description>
 </Class>
 
 
-<Class name="iknowAL.REST.JSON">
+<Class name="ikra.REST.JSON">
 <Super>%Base</Super>
-<TimeChanged>63935,75726.971818</TimeChanged>
+<TimeChanged>64113,64186.864909</TimeChanged>
 <TimeCreated>63897,67180.001599</TimeCreated>
 
 <UDLText name="T">
@@ -3651,7 +3119,7 @@ Negative emotional saturation of the review.</Description>
 <Implementation><![CDATA[
    set st=$$$OK
    try {
-	   do ##class(%ZEN.Auxiliary.jsonSQLProvider).%WriteJSONFromSQL(,"select * from iknowal_dictionary.category order by CtgName")
+	   do ##class(%ZEN.Auxiliary.jsonSQLProvider).%WriteJSONFromSQL(,"select * from ikra_dictionary.category order by CtgName")
    } catch ex {
        set st=ex.AsStatus()
    }
@@ -3668,8 +3136,8 @@ Negative emotional saturation of the review.</Description>
 	
     s st=$$$OK
     try {
-    	// Берём JSON из запроса и конвертируем в объект класса iknowAL.Dictionary.Category
-    	$$$THROWONERROR(st,##class(%ZEN.Auxiliary.jsonProvider).%ConvertJSONToObject(content,"iknowAL.Dictionary.Category",.obj,1))
+    	// Берём JSON из запроса и конвертируем в объект класса ikra.Dictionary.Category
+    	$$$THROWONERROR(st,##class(%ZEN.Auxiliary.jsonProvider).%ConvertJSONToObject(content,"ikra.Dictionary.Category",.obj,1))
     	$$$THROWONERROR(st,obj.%Save())
     } 
     catch ex {
@@ -3686,7 +3154,7 @@ Negative emotional saturation of the review.</Description>
 <Implementation><![CDATA[
     set st=$$$OK
     try {
-        $$$THROWONERROR(st,##class(iknowAL.Dictionary.Category).%DeleteId(catid))
+        $$$THROWONERROR(st,##class(ikra.Dictionary.Category).%DeleteId(catid))
     } catch ex {
         s st=ex.AsStatus()
     }
@@ -3707,7 +3175,7 @@ Negative emotional saturation of the review.</Description>
    		$$$THROWONERROR(st,##class(%ZEN.Auxiliary.jsonProvider).%ConvertJSONToObject(content,,.obj,1))
    
    		// Открываем объект, который хотим отредакнировать
-   		set ctg=##class(iknowAL.Dictionary.Category).%OpenId(catid)
+   		set ctg=##class(ikra.Dictionary.Category).%OpenId(catid)
    		throw:ctg=$$$NULLOREF ##class(%Exception.StatusException).CreateFromStatus($$$ERROR(5001,"Category does not exist"))
     	// Редактируем и сохраняем
    		set ctg.CtgName=obj.CtgName
@@ -3742,7 +3210,7 @@ Negative emotional saturation of the review.</Description>
 <Implementation><![CDATA[
    set st=$$$OK
    try {
-	   do ##class(%ZEN.Auxiliary.jsonSQLProvider).%WriteJSONFromSQL(,"select * from iknowal_dictionary.fmarker where CtgId = "_cncptid_" order by FName")
+	   do ##class(%ZEN.Auxiliary.jsonSQLProvider).%WriteJSONFromSQL(,"select * from ikra_dictionary.fmarker where CtgId = "_cncptid_" order by FName")
    } catch ex {
        set st=ex.AsStatus()
    }
@@ -3759,8 +3227,8 @@ Negative emotional saturation of the review.</Description>
 	
     s st=$$$OK
     try {
-    	// Берём JSON из запроса и конвертируем в объект класса iknowAL.Dictionary.Category
-    	$$$THROWONERROR(st,##class(%ZEN.Auxiliary.jsonProvider).%ConvertJSONToObject(content,"iknowAL.Dictionary.Fmarker",.obj,1))
+    	// Берём JSON из запроса и конвертируем в объект класса ikra.Dictionary.Category
+    	$$$THROWONERROR(st,##class(%ZEN.Auxiliary.jsonProvider).%ConvertJSONToObject(content,"ikra.Dictionary.Fmarker",.obj,1))
     	$$$THROWONERROR(st,obj.%Save())
     } 
     catch ex {
@@ -3777,7 +3245,7 @@ Negative emotional saturation of the review.</Description>
 <Implementation><![CDATA[
     set st=$$$OK
     try {
-        $$$THROWONERROR(st,##class(iknowAL.Dictionary.Fmarker).%DeleteId(cncptid))
+        $$$THROWONERROR(st,##class(ikra.Dictionary.Fmarker).%DeleteId(cncptid))
     } catch ex {
         s st=ex.AsStatus()
     }
@@ -3798,7 +3266,7 @@ Negative emotional saturation of the review.</Description>
    		$$$THROWONERROR(st,##class(%ZEN.Auxiliary.jsonProvider).%ConvertJSONToObject(content,,.obj,1))
    
    		// Открываем объект, который хотим отредакнировать
-   		set ctg=##class(iknowAL.Dictionary.Fmarker).%OpenId(cncptid)
+   		set ctg=##class(ikra.Dictionary.Fmarker).%OpenId(cncptid)
    		throw:ctg=$$$NULLOREF ##class(%Exception.StatusException).CreateFromStatus($$$ERROR(5001,"Concept does not exist"))
     	// Редактируем и сохраняем
    		set ctg.FName=obj.FName
@@ -3832,7 +3300,7 @@ Negative emotional saturation of the review.</Description>
 <Implementation><![CDATA[
    set st=$$$OK
    try {
-	   do ##class(%ZEN.Auxiliary.jsonSQLProvider).%WriteJSONFromSQL(,"select * from iknowal_dictionary.emarker order by EName")
+	   do ##class(%ZEN.Auxiliary.jsonSQLProvider).%WriteJSONFromSQL(,"select * from ikra_dictionary.emarker order by EName")
    } catch ex {
        set st=ex.AsStatus()
    }
@@ -3849,8 +3317,8 @@ Negative emotional saturation of the review.</Description>
 	
     s st=$$$OK
     try {
-    	// Берём JSON из запроса и конвертируем в объект класса iknowAL.Dictionary.Category
-    	$$$THROWONERROR(st,##class(%ZEN.Auxiliary.jsonProvider).%ConvertJSONToObject(content,"iknowAL.Dictionary.EMarker",.obj,1))
+    	// Берём JSON из запроса и конвертируем в объект класса ikra.Dictionary.Category
+    	$$$THROWONERROR(st,##class(%ZEN.Auxiliary.jsonProvider).%ConvertJSONToObject(content,"ikra.Dictionary.EMarker",.obj,1))
     	$$$THROWONERROR(st,obj.%Save())
     } 
     catch ex {
@@ -3867,7 +3335,7 @@ Negative emotional saturation of the review.</Description>
 <Implementation><![CDATA[
     set st=$$$OK
     try {
-        $$$THROWONERROR(st,##class(iknowAL.Dictionary.EMarker).%DeleteId(emtid))
+        $$$THROWONERROR(st,##class(ikra.Dictionary.EMarker).%DeleteId(emtid))
     } catch ex {
         s st=ex.AsStatus()
     }
@@ -3888,7 +3356,7 @@ Negative emotional saturation of the review.</Description>
    		$$$THROWONERROR(st,##class(%ZEN.Auxiliary.jsonProvider).%ConvertJSONToObject(content,,.obj,1))
    
    		// Открываем объект, который хотим отредакнировать
-   		set ctg=##class(iknowAL.Dictionary.EMarker).%OpenId(emtid)
+   		set ctg=##class(ikra.Dictionary.EMarker).%OpenId(emtid)
    		throw:ctg=$$$NULLOREF ##class(%Exception.StatusException).CreateFromStatus($$$ERROR(5001,"Emotion does not exist"))
     	// Редактируем и сохраняем
     	set ctg.EValue=obj.EValue
@@ -3922,6 +3390,8 @@ Negative emotional saturation of the review.</Description>
 <ReturnType>%Status</ReturnType>
 <Implementation><![CDATA[
 	If ($Data(%request.MimeData("file",1))) {
+		do ##class(ikra.Dictionary.Fmarker).%KillExtent()
+		do ##class(ikra.Dictionary.Category).%KillExtent()
 		write "File contents, first line:"_$$$NL
 		set stream = ##class(%Stream.FileCharacter).%New()
 		set stream = %request.GetMimeData("file",1)
@@ -3930,12 +3400,12 @@ Negative emotional saturation of the review.</Description>
 			set str = $ZCVT(str,"I","UTF8") 
 			if (($piece(str, "#", 1) = "i") && ($piece(str, "#", 2) '= "END")) {
 				set cName = $piece(str, "#", 2)
-				&sql(INSERT INTO iknowAL_Dictionary.Category(CtgName) VALUES(:cName))
-				&sql(SELECT ID INTO :cid FROM iknowAL_Dictionary.Category WHERE CtgName = :cName)
+				&sql(INSERT INTO ikra_Dictionary.Category(CtgName) VALUES(:cName))
+				&sql(SELECT ID INTO :cid FROM ikra_Dictionary.Category WHERE CtgName = :cName)
 			}
 			elseif ($piece(str, "#", 1) = "t") {
 				set fName = $piece(str, "#", 2)
-				&sql(INSERT INTO iknowAL_Dictionary.Fmarker(FName, CtgID) VALUES(:fName, :cid))
+				&sql(INSERT INTO ikra_Dictionary.Fmarker(FName, CtgID) VALUES(:fName, :cid))
 			}
 		}
 	}
@@ -3948,6 +3418,7 @@ Negative emotional saturation of the review.</Description>
 <ReturnType>%Status</ReturnType>
 <Implementation><![CDATA[
 	If ($Data(%request.MimeData("file",1))) {
+		do ##class(ikra.Dictionary.EMarker).%KillExtent()
 		write "File contents, first line:"_$$$NL
 		set stream = ##class(%Stream.FileCharacter).%New()
 		set stream = %request.GetMimeData("file",1)
@@ -3960,7 +3431,7 @@ Negative emotional saturation of the review.</Description>
 			while ($piece(cName, ",", i) '= "") {
 				set eName = $piece(cName, ",", i)
 				set i = i + 1
-				&sql(INSERT INTO iknowAL_Dictionary.EMarker(EName, EValue) VALUES(:eName, :eVal))
+				&sql(INSERT INTO ikra_Dictionary.EMarker(EName, EValue) VALUES(:eName, :eVal))
 			}
 		}
 	}
@@ -3973,11 +3444,11 @@ Negative emotional saturation of the review.</Description>
 <ReturnType>%Status</ReturnType>
 <Implementation><![CDATA[
    set st=$$$OK
-   set sFolder = "C:\InterSystems\Ensemble\CSP\default\files\emotion.txt"
+   set sFolder = "/InterSystems/Cache/csp/default/files/emotion.txt"
    set stream = ##class(%Stream.FileCharacter).%New()
    set sc = stream.LinkToFile(sFolder)
    
-   &sql(declare cur cursor for select EName, case when EValue > 0 then '+' || EValue else '' || EValue end into :ename, :evalue from iknowal_dictionary.emarker order by EName)
+   &sql(declare cur cursor for select EName, case when EValue > 0 then '+' || EValue else '' || EValue end into :ename, :evalue from ikra_dictionary.emarker order by EName)
    &sql(open cur)
    &sql(fetch cur)
 	
@@ -3994,7 +3465,7 @@ Negative emotional saturation of the review.</Description>
 	do stream.%Save()
 	
    
-   write "files\emotion.txt"
+   write "files/emotion.txt"
    quit st
 ]]></Implementation>
 </Method>
@@ -4004,7 +3475,7 @@ Negative emotional saturation of the review.</Description>
 <ReturnType>%Status</ReturnType>
 <Implementation><![CDATA[
    set st=$$$OK
-   set sFolder = "C:\InterSystems\Ensemble\CSP\default\files\functional.txt"
+   set sFolder = "/InterSystems/Cache/csp/default/files/functional.txt"
    set stream = ##class(%Stream.FileCharacter).%New()
    set sc = stream.LinkToFile(sFolder)
    
@@ -4013,11 +3484,11 @@ Negative emotional saturation of the review.</Description>
    	into :str
 	from
 	(select ctg.ctgname, 1 nm, fmr.fname
-	from iknowal_dictionary.category ctg
-	join iknowal_dictionary.fmarker fmr on ctg.id = fmr.ctgid
+	from ikra_dictionary.category ctg
+	join ikra_dictionary.fmarker fmr on ctg.id = fmr.ctgid
 	union all
 	select ctgname, 0, ctgname
-	from iknowal_dictionary.category) tb
+	from ikra_dictionary.category) tb
 	order by ctgname, nm, fname)
    &sql(open cur1)
    &sql(fetch cur1)
@@ -4032,7 +3503,66 @@ Negative emotional saturation of the review.</Description>
 	do stream.%Save()
 	
    
-   write "files\functional.txt"
+   write "files/functional.txt"
+   quit st
+]]></Implementation>
+</Method>
+
+<UDLText name="T">
+<Content><![CDATA[/***************************************************************************************/
+]]></Content>
+</UDLText>
+
+<UDLText name="T">
+<Content><![CDATA[/********************************** Работа с доменами **********************************/
+]]></Content>
+</UDLText>
+
+<UDLText name="T">
+<Content><![CDATA[/***************************************************************************************/
+]]></Content>
+</UDLText>
+
+<Method name="GetAllDomainNames">
+<ClassMethod>1</ClassMethod>
+<ReturnType>%Status</ReturnType>
+<Implementation><![CDATA[
+   set st=$$$OK
+   set ^tcnt = ^tcnt + 1
+   set ^tlog(^tcnt) = "+"
+   
+   set statement=##class(%SQL.Statement).%New()
+   set status=statement.%PrepareClassQuery("%iKnow.Domain","GetAllDomains")
+   if $$$ISERR(status) { do $system.OBJ.DisplayError(status) }
+   set resultset=statement.%Execute()
+   
+   do ##class(ikra.Dictionary.Domains).%KillExtent()
+   while resultset.%Next() {
+	   set dName = resultset.%Get("domainName")
+	   set ^tlog(^tcnt) = ^tlog(^tcnt)_" "_dName
+	   &sql(INSERT INTO ikra_Dictionary.Domains(dmnName) VALUES(:dName))
+	}
+   
+   try {
+	   do ##class(%ZEN.Auxiliary.jsonSQLProvider).%WriteJSONFromSQL(,"select * from ikra_dictionary.domains order by dmnName")
+   } catch ex {
+       set st=ex.AsStatus()
+   }
+   
+   quit st
+]]></Implementation>
+</Method>
+
+<Method name="StartCompute">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>domName:%String</FormalSpec>
+<ReturnType>%Status</ReturnType>
+<Implementation><![CDATA[
+   set st=$$$OK
+   
+   do ##class(ikra.Phones.Processing.Processing).Start(domName)
+   do ##class(ikra.util.DeepSeeUtils).updateDSCubes("IKRACube01")
+   
    quit st
 ]]></Implementation>
 </Method>
@@ -4041,12 +3571,33 @@ Negative emotional saturation of the review.</Description>
 
 
 
-<Class name="iknowAL.util.main">
+<Class name="ikra.util.DeepSeeUtils">
+<Description>
+Методы работы с кубами аналитики</Description>
+<Super>%RegisteredObject</Super>
+<TimeChanged>63939,58789.055176</TimeChanged>
+<TimeCreated>63939,58713.516405</TimeCreated>
+
+<Method name="updateDSCubes">
+<ClassMethod>1</ClassMethod>
+<FormalSpec>cubeName:%String</FormalSpec>
+<ReturnType>%Status</ReturnType>
+<Implementation><![CDATA[
+	
+	#dim status As %Status
+	set status = ##class(%DeepSee.Utils).%BuildCube(cubeName)
+	quit status
+]]></Implementation>
+</Method>
+</Class>
+
+
+<Class name="ikra.util.main">
 <Description>
 general functions of iKnow domain creation</Description>
 <IncludeCode>%IKPublic</IncludeCode>
 <Super>%XML.Adaptor</Super>
-<TimeChanged>63864,58924.619863</TimeChanged>
+<TimeChanged>63986,53519.662196</TimeChanged>
 <TimeCreated>63702,52117.633112</TimeCreated>
 
 <Method name="Create">
@@ -4061,8 +3612,8 @@ domFolder - имя папки, где находятся файлы словар
 	/* установка заначения пути к файлам словарей для домена, 
 	выполняется 1 раз при создании домена, в последствии может быть заменена только вручную */
 	
-	set ^iknowALDomainFolder(domName) = domFolder
-	set ^iknowALDomainFolder(domName,"loadNumber") = 0
+	set ^ikraDomainFolder(domName) = domFolder
+	set ^ikraDomainFolder(domName,"loadNumber") = 0
 	
 	#dim confName As %String = "Conf"_domName
 	#dim domain As %iKnow.Domain = ..CreateDomain(domName)
@@ -4104,7 +3655,7 @@ domName - имя создаваемого домена, используется
 2. Dictionary.txt -  список проверочных слов и выражений для разделения статей по темам
 3. BlackList.txt - список слов и выражений, которые не будут распознаваться как концепты
 4. Emotions.txt - список основ слов, характеризующих эмоциональную окраску статей
-Все файлы находятся в папке ^iknowAVDomainFolder(domName)
+Все файлы находятся в папке ^ikraDomainFolder(domName)
 writeLog - флаг записи лог-файла при обновлении. Log-файл с именем updateLog.txt в рабочем каталоге домена</Description>
 <ClassMethod>1</ClassMethod>
 <FormalSpec>domName:%String,domFolder:%String,sourceFilesPath:%String</FormalSpec>
@@ -4123,7 +3674,7 @@ writeLog - флаг записи лог-файла при обновлении. 
 	// Создаем словари для matching
 	do ..CreateDictionaries(domName)
 	// Формируем черные списки							
-	do ..CreateBlackLists(domName, "GeneralBlackList")			
+	//do ..CreateBlackLists(domName, "GeneralBlackList")			
 	
 	// Добавляем файл в список на обработку
 	// 3 параметр - смотреть в подпапках, 4 - фильтр
@@ -4197,7 +3748,7 @@ domName - имя домена</Description>
 <FormalSpec>domName:%String</FormalSpec>
 <ReturnType>%Status</ReturnType>
 <Implementation><![CDATA[
-	k ^iknowALDomainFolder(domName)
+	k ^ikraDomainFolder(domName)
 	#dim confName As %String = "Conf"_domName
 
 	// Удалаем поля метаданных	
@@ -4205,7 +3756,7 @@ domName - имя домена</Description>
 	// Удаляем словари для matching	
 	do ..DeleteDictionaries(domName)
 	// Удаляем черные списки				
-	do ..DeleteBlackLists(domName, "GeneralBlackList")	
+	//do ..DeleteBlackLists(domName, "GeneralBlackList")	
 	// Удаляем конфигурацию
 	#dim status As %Status = ..DeleteConfiguration(confName)
 	
@@ -4255,7 +3806,7 @@ domName - имя домена</Description>
 	
 	write "   domain name   = ", domName, !
 	write "   domain ID     = ", domainID, !
-	write "   domain folder = ", ^iknowALDomainFolder(domName), !
+	write "   domain folder = ", ^ikraDomainFolder(domName), !
 	write "   sources       = ", sourceNumber, !
 	
 	return $$$OK
@@ -4286,9 +3837,9 @@ domName - имя создаваемого домена</Description>
 	{
 		set domain = ##class(%iKnow.Domain).%New(domName)
 		do domain.%Save()
-		do domain.SetParameter($$$IKPSTEMMING, 1)	
-		do domain.%Save()
-		
+		do domain.SetParameter($$$IKPSTEMMING, 1)
+		write "   stemming is ON",!	
+		do domain.%Save()		
 		write "   domain ", domName, " created!", !
 	}
 	return domain
@@ -4354,13 +3905,14 @@ confName - имя создаваемой конфигурации</Description>
 	}
 	else
 	{
-		//#dim filename As %String = ^iknowAVDomainFolder(domName)_"Substitution.txt"
+		//#dim filename As %String = ^ikraDomainFolder(domName)_"Substitution.txt"
 		
-		set userDictionaryName = "MyUserDict" 
+		/*set userDictionaryName = "MyUserDict" 
 		
-		set udict = ..CreateUserDictionary(userDictionaryName)
+		set udict = ..CreateUserDictionary(userDictionaryName)*/
 	
-		s configuration = ##class(%iKnow.Configuration).%New(confName,0,"ru",udict.Name,1)
+		//s configuration = ##class(%iKnow.Configuration).%New(confName,0,"ru",udict.Name,1)
+		s configuration = ##class(%iKnow.Configuration).Create(confName,0,"ru")
 		//set configuration = ##class(%iKnow.Configuration).%New(confName,1,$lb("en","ru"),filename,1)		
 		//s configuration = ##class(%iKnow.Configuration).%New(confName,0,"ru")
 		//set configuration.StemmingConfig = "DEFAULT"
@@ -4407,7 +3959,7 @@ confName - имя удаляемой конфигурации</Description>
 	else
 	{
 		write "   configuration ",confName," doesn't exist",!
-		return $$$ERROR()
+		return $$$OK
 	}
 ]]></Implementation>
 </Method>
@@ -4577,7 +4129,7 @@ domName - имя домена, в котором проводится дейст
 
 <Method name="CreateDictionaries">
 <Description>
-создание словарей по файлу, путь к файлу ^iknowALDomainFolder(domName) + "Dictionary.txt"
+создание словарей по файлу, путь к файлу ^ikraDomainFolder(domName) + "Dictionary.txt"
 domName - имя домена, в котором проводится действие
 формат файла, идентификаторы строк: "!" - комментарий, "d" - словарь, "i"-группа терминов, "t"-термин</Description>
 <ClassMethod>1</ClassMethod>
@@ -4595,7 +4147,7 @@ domName - имя домена, в котором проводится дейст
 		return $$$ERROR()
 	}
 	
-	#dim filename As %String = ^iknowALDomainFolder(domName)_"Dictionary.txt"
+	#dim filename As %String = ^ikraDomainFolder(domName)_"Dictionary.txt"
 	#dim stream As %Stream.FileCharacter = ##class(%Stream.FileCharacter).%New()
 	set sc = stream.LinkToFile(filename)
 	
@@ -4743,7 +4295,7 @@ BLName - имя формируемого в домене черного спис
 	
 	set blackListId = ##class(%iKnow.Utils.MaintenanceAPI).CreateBlackList(domainId, BLName)
 	
-	set filename = ^iknowALDomainFolder(domName)_"BlackList.txt"
+	set filename = ^ikraDomainFolder(domName)_"BlackList.txt"
 	set stream = ##class(%Stream.FileCharacter).%New()
 	set sc = stream.LinkToFile(filename)
 	

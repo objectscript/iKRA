@@ -4,6 +4,9 @@ angular.module("app", ['ngRoute'])
 
 function ctrl($scope, $http) {
 
+	$scope.cmp = "Выполнить расчет";
+	$scope.domName = "";
+	
         /***************************************************************************************/
         /********************************* Работа с категориями ********************************/
         /***************************************************************************************/
@@ -13,6 +16,8 @@ function ctrl($scope, $http) {
             $http.get("/dictionary/json/category").success(
                 function (data) {
                     $scope.categories = data.children;
+		    $scope.ctgSelect = data.children[0]["ID"];
+		    $scope.getConcepts($scope.ctgSelect);
                 }
             ).error(
                 function (data, status) {
@@ -170,7 +175,6 @@ function ctrl($scope, $http) {
 
         //Добавить эмоциональный маркер
         $scope.emtcreate = function (emotion) {
-
             $http.post("/dictionary/json/newemotion", emotion)
                 .success(function (data) {
                     $scope.getEmotions();
@@ -192,7 +196,6 @@ function ctrl($scope, $http) {
 
         //Удалить эмоциональный маркер
         $scope.emtdelete = function (emotion) {
-            console.log(emotion.ID);
             $http.delete("/dictionary/json/emotion/" + emotion.ID)
                 .success(function (data) {
                     $scope.getEmotions();
@@ -257,6 +260,51 @@ function ctrl($scope, $http) {
             )
         }
 
+	/***************************************************************************************/
+        /********************************** Работа с доменами **********************************/
+        /***************************************************************************************/
+
+	//Получить данные по доменам
+        $scope.getDomains = function () {
+            $http.get("/dictionary/json/domains").success(
+                function (data) {
+                    $scope.domains = data.children;
+		    //$scope.domName = data.children[0]["dmnName"];
+		    $scope.dmnSelect = data.children[0]["ID"];
+             console.log(data.children);       
+                }
+            ).error(
+                function (data, status) {
+                    alert("[" + status + "]   Ошибка при загрузке категорий![" + data + "]");
+                }
+            )
+        }
+
+	//Выполнить расчет
+        $scope.compute = function () {
+	    console.log($scope.domName);
+	    if ($scope.domName.length > 0 && $scope.cmp == "Выполнить расчет") {
+		$scope.cmp="Ожидайте окончания расчета";
+		$http.post("/dictionary/json/compute/" + $scope.domName, "")
+                .success(function (data) {
+                    console.log("Расчет запущен");
+		    $scope.cmp = "Выполнить расчет";
+                }).error(function (data, status) {
+                    $scope.alertzone = "[" + status + "] Ошибка отправки запроса расчета :( [" + data + "]";
+                });
+	    }
+        }
+
+	$scope.setDomName = function (id) {
+		for (var i = 0; i < $scope.domains.length; i++) {
+		    if ($scope.domains[i]["ID"] == id) {
+			$scope.domName = $scope.domains[i]["dmnName"]; 
+			break;
+		    }
+		}
+		console.log($scope.domName);
+	}
+
 }
 ])
 
@@ -275,6 +323,10 @@ function ctrl($scope, $http) {
     });
     $routeProvider.when('/upload', {
         templateUrl: 'views/upload.html',
+        controller: 'ctrl'
+    });
+    $routeProvider.when('/domain', {
+        templateUrl: 'views/domain.html',
         controller: 'ctrl'
     });
 });
