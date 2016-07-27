@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Export generator="Cache" version="25" zv="Cache for UNIX (Red Hat Enterprise Linux for x86-64) 2015.3 (Build 259U)" ts="2016-07-25 13:05:45">
+<Export generator="Cache" version="25" zv="Cache for UNIX (Red Hat Enterprise Linux for x86-64) 2015.3 (Build 259U)" ts="2016-07-27 17:22:22">
 <Class name="ikra.Dictionary.Category">
 <Super>%Persistent</Super>
 <TimeChanged>63899,74282.76398</TimeChanged>
@@ -513,7 +513,7 @@ Method of deleting a domain with all environment</Description>
 
 <Class name="ikra.Phones.Loader">
 <IncludeCode>%IKPublic</IncludeCode>
-<TimeChanged>63944,43591.196177</TimeChanged>
+<TimeChanged>64126,56936.250374</TimeChanged>
 <TimeCreated>63702,54395.292655</TimeCreated>
 
 <Method name="Load">
@@ -621,8 +621,8 @@ For example, with call: do ##class(ikra.Phones.loader).Load("Phone", "D:\intuers
 					SELECT AuthorRating INTO :AutRat
 					FROM  ikra_Phones_Stat.Review  
 					WHERE SourceId = :i)
-				do ##class(%iKnow.Queries.MetadataAPI).SetValue(domId, "PhoneId", externalId, $list($list(MetDat, j), 3))
-				do ##class(%iKnow.Queries.MetadataAPI).SetValue(domId, "PhoneName", externalId, $list($list(MetDat, j), 4))
+				do ##class(%iKnow.Queries.MetadataAPI).SetValue(domId, "UnitId", externalId, $list($list(MetDat, j), 3))
+				do ##class(%iKnow.Queries.MetadataAPI).SetValue(domId, "UnitName", externalId, $list($list(MetDat, j), 4))
 				do ##class(%iKnow.Queries.MetadataAPI).SetValue(domId, "AuthorRating", externalId, AutRat)
 				write "   In loader phone name is: "_$list($list(MetDat, j), 4)_" ar("_AutRat_") pId = "_$list($list(MetDat, j), 3), !
 			}
@@ -634,6 +634,11 @@ For example, with call: do ##class(ikra.Phones.loader).Load("Phone", "D:\intuers
 	write !, "Initial Number of Sources: ", initialNumOfSources, !
 	write "Sources Added: ", numOfSources - initialNumOfSources, !
 	write "Total: ", numOfSources,!
+	
+	do ##class(ikra.Dictionary.Load).LoadFunctional()
+	write !, "Functional markers loaded"
+	do ##class(ikra.Dictionary.Load).LoadEmotion()
+	write !, "Emotion markers loaded"
 		
 	return numOfSources - initialNumOfSources
 ]]></Implementation>
@@ -702,6 +707,11 @@ Method of deleting a domain with all environment</Description>
 	// Kill Extent of all classes
 	do ##class(ikra.Dictionary.MarksUnit).%KillExtent()
 	do ##class(ikra.Dictionary.MarksReview).%KillExtent()
+	
+	do ##class(ikra.Dictionary.Category).%KillExtent()
+	do ##class(ikra.Dictionary.Fmarker).%KillExtent()
+	do ##class(ikra.Dictionary.EMarker).%KillExtent()
+	
 	set tSC = ##class(ikra.util.main).DeleteDomain(domName)
 	if (tSC '= $$$OK) { write "Can't delete domain :", domName, $System.Status.DisplayError(tSC), ! }
 	write "ok", !
@@ -1121,7 +1131,7 @@ writeToFile - filename to write a full list of similar terms. If writeToFile = "
 <Class name="ikra.Phones.Processing.Processing">
 <IncludeCode>%IKPublic</IncludeCode>
 <Super>%RegisteredObject</Super>
-<TimeChanged>63944,43619.896181</TimeChanged>
+<TimeChanged>64126,45864.870653</TimeChanged>
 <TimeCreated>63703,51656.851126</TimeCreated>
 
 <Method name="Start">
@@ -1755,6 +1765,7 @@ The method analyzes the sentences of the sources on the functional markers and f
 	
 		while (SQLCODE = 0) {
 			set domID = ##class(ikra.util.main).GetDomainId(domName)
+			write srcId_" "_ccName, !
 			set catVal = ^review(srcId, ccName)
 			&sql(INSERT OR UPDATE INTO ikra_Dictionary.MarksReview(DomainID, UID, RID, CtgID, Mark)	
 			VALUES (:domID, :oID, :srcId, :ccID, :catVal))
