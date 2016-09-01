@@ -1,3 +1,3 @@
 # iKRA
 InterSystems iKnow Reviews Analyzer
-General approach to build santiment review analysis projects with InterSystems iKnow
+General approach to build sentiment review analysis projects with InterSystems iKnow
