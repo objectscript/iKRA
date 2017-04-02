@@ -1,11 +1,126 @@
-angular.module("app", ['ngRoute'])
+var translationsRU = {
+    MAIN_MENU: {
+        F_MARKERS: {
+            HEAD: 'ф-Маркеры',
+            CATEGORIES: 'Категории',
+            CONCEPTS: 'Концепты'
+        },
+        E_MARKERS: 'э-Маркеры',
+        UPLOAD: 'Загрузить',
+        DOWNLOAD: { 
+            HEAD: 'Сохранить',
+            F_MARKERS: 'ф-Маркеры',
+            E_MARKERS: 'э-Маркеры'
+        },
+        DOMAINS: 'Домены',
+        GRAPH: 'График',
+        USER: 'Пользователь',
+        CHANGE_LANG: 'Язык',
+        SELECT_LANG_RU: 'РУССКИЙ',
+        SELECT_LANG_EN: 'АНГЛИЙСКИЙ'
+    },
+    CATEGORIES: {
+        HEAD: 'Категории',
+        CATEGORY: 'Категория',
+        ADD_BTN: 'Добавить',
+        SAVE_BTN: 'Сохранить'
+    },
+    CONCEPTS: {
+        HEAD: 'Концепты',
+        CONCEPT: 'Концепт',
+        CATEGORY: '@:CATEGORIES.CATEGORY',
+        ADD_BTN: '@:CATEGORIES.ADD_BTN',
+        SAVE_BTN: '@:CATEGORIES.SAVE_BTN'
+    },
+    E_MARKERS: {
+        HEAD: 'Эмоциональные маркеры',
+        E_MARKER: 'Маркер',
+        ADD_BTN: '@:CATEGORIES.ADD_BTN',
+        SAVE_BTN: '@:CATEGORIES.SAVE_BTN'
+    },
+    UPLOAD: {
+        HEAD: 'Загрузка данных',
+        ADDING: 'Добавить',
+        DOWNLOAD_BTN: 'Загрузить',
+        F_DICTIONARY: 'функциональный словарь',
+        E_DICTIONARY: 'эмоциональный словарь'
+    },
+    DOMAINS: {
+        HEAD: 'Домены',
+        DOMAIN: 'Домен',
+        CALCULATE_BTN: 'Расчет'
+    }
+};
 
-.controller('ctrl', ['$scope', '$http',
+var translationsEN = {
+    MAIN_MENU: {
+        F_MARKERS: {
+            HEAD: 'f-Markers',
+            CATEGORIES: 'Categories',
+            CONCEPTS: 'Concepts'
+        },
+        E_MARKERS: 'e-Markers',
+        UPLOAD: 'Download',
+        DOWNLOAD: { 
+            HEAD: 'Upload',
+            F_MARKERS: 'f-Markers',
+            E_MARKERS: 'e-Markers'
+        },
+        DOMAINS: 'Domains',
+        GRAPH: 'Charts',
+        USER: 'User',
+        CHANGE_LANG: 'Language',
+        SELECT_LANG_RU: 'RUSSIAN',
+        SELECT_LANG_EN: 'ENGLISH'
+    },
+    CATEGORIES: {
+        HEAD: 'Categories',
+        CATEGORY: 'Category',
+        ADD_BTN: 'Add',
+        SAVE_BTN: 'Save'
+    },
+    CONCEPTS: {
+        HEAD: 'Concetps',
+        CONCEPT: 'Concept',
+        CATEGORY: '@:CATEGORIES.CATEGORY',
+        ADD_BTN: '@:CATEGORIES.ADD_BTN',
+        SAVE_BTN: '@:CATEGORIES.SAVE_BTN'
+    },
+    E_MARKERS: {
+        HEAD: 'Emotional markers',
+        E_MARKER: 'Marker',
+        ADD_BTN: '@:CATEGORIES.ADD_BTN',
+        SAVE_BTN: '@:CATEGORIES.SAVE_BTN'
+    },
+    UPLOAD: {
+        HEAD: 'Download data',
+        ADDING: 'Adding',
+        DOWNLOAD_BTN: 'Download',
+        F_DICTIONARY: 'functional dictionary',
+        E_DICTIONARY: 'emotional dictionary'
+    },
+    DOMAINS: {
+        HEAD: 'Domains',
+        DOMAIN: 'Domain',
+        CALCULATE_BTN: 'Calculate'
+    }
+};
 
-function ctrl($scope, $http) {
+
+angular.module("app", ['ngRoute', 'pascalprecht.translate'])
+
+.controller('ctrl', ['$scope', '$http', '$translate',
+
+function ctrl($scope, $http, $translate) {
 
 	$scope.cmp = "Выполнить расчет";
 	$scope.domName = "";
+    $scope.langKey = "RU";
+    
+    $scope.changeLanguage = function (langKey) {
+        $translate.use(langKey);
+        $scope.langKey = langKey.toUpperCase();
+    };
 	
         /***************************************************************************************/
         /********************************* Работа с категориями ********************************/
@@ -13,67 +128,72 @@ function ctrl($scope, $http) {
 
         //Получить данные по категориям
         $scope.getCategories = function () {
-            $http.get("/dictionary/json/category").success(
-                function (data) {
-                    $scope.categories = data.children;
-		    $scope.ctgSelect = data.children[0]["ID"];
-		    $scope.getConcepts($scope.ctgSelect);
+            $http.get("/ikra/json/category").then(
+                function (response) {
+                    $scope.categories = response.data.children;
+		            $scope.ctgSelect = response.data.children[0]["ID"];
+		            $scope.getConcepts($scope.ctgSelect);
+                },
+                function (response, status) {
+                    alert("[" + status + "]   Ошибка при загрузке категорий![" + response + "]");
                 }
-            ).error(
-                function (data, status) {
-                    alert("[" + status + "]   Ошибка при загрузке категорий![" + data + "]");
-                }
-            )
+            );
         }
 
         //Обработка отправки категорий
         $scope.ctggo = function (category) {
-            if ($scope.ctgsbm == "Добавить") {
-                if (category.CtgName != "" && category.CtgName != null) {
+            if ($scope.ctgsbm == "ADD_BTN") {
+                if (category.CtgName != {} && category.CtgName != null) {
                     $scope.ctgcreate(category);
                 }
             } else {
-                $scope.ctgsbm = "Добавить";
+                $scope.ctgsbm = "ADD_BTN";
                 $scope.ctgupdate(category);
             }
         }
 
         //Добавить категорию
         $scope.ctgcreate = function (category) {
-            $http.post("/dictionary/json/newcategory", category)
-                .success(function (data) {
+            $http.post("/ikra/json/newcategory", category).then(
+                function(response) {
                     $scope.getCategories();
                     $scope.alertzone = "Добавили категорию " + category.CtgName;
-                }).error(function (data, status) {
-                    $scope.alertzone = "[" + status + "] Ошибка добавления категории :( [" + data + "]";
-                });
+                },
+                function (response, status) {
+                    $scope.alertzone = "[" + status + "] Ошибка добавления категории :( [" + response + "]";
+                }
+            );
         }
 
         //Обновить категорию
         $scope.ctgupdate = function (category) {
-            $http.put("/dictionary/json/category/" + category.ID, category)
-                .success(function (data) {
+            $http.put("/ikra/json/category/" + category.ID, category).then(
+                function (response) {
                     $scope.alertzone = "Обновили категорию " + category.CtgName;
-                }).error(function (data, status) {
-                    $scope.alertzone = "[" + status + "] Ошибка обновления имени категории :( [" + data + "]";
-                });
+                },
+                function (response, status) {
+                    $scope.alertzone = "[" + status + "] Ошибка обновления имени категории :( [" + response + "]";
+                }
+            );
         }
 
         //Удалить категорию
         $scope.ctgdelete = function (category) {
-            $http.delete("/dictionary/json/category/" + category.ID)
-                .success(function (data) {
+            $http.delete("/ikra/json/category/" + category.ID).then(
+                function (response) {
                     $scope.getCategories();
                     $scope.alertzone = "Удалили категорию " + category.CtgName;
-                }).error(function (data, status) {
-                    $scope.alertzone = "[" + status + "] Ошибка удаления категории :( [" + data + "]";
-                });
+                },
+                function (response, status) {
+                    $scope.alertzone = "[" + status + "] Ошибка удаления категории :( [" + response + "]";
+                }
+            );
         }
 
         //Редактировать категорию
         $scope.ctgedit = function (ctg) {
             $scope.category = ctg;
-            $scope.ctgsbm = "Сохранить";
+            $scope.ctgsbm = "SAVE_BTN";
         }
 
         /***************************************************************************************/
@@ -82,134 +202,138 @@ function ctrl($scope, $http) {
 
         //Получить данные по концептам соответствующей категории
         $scope.getConcepts = function (ctgSelect) {
-            $http.get("/dictionary/json/concept/" + ctgSelect).success(
-                function (data) {
-                    $scope.concepts = data.children;
-                }
-            ).error(
-                function (data, status) {
-                    alert("[" + status + "]   Ошибка при загрузке концептов![" + data + "]");
+            $http.get("/ikra/json/concept/" + ctgSelect).then(
+                function (response) {
+                    $scope.concepts = response.data.children;
+                },
+                function (response, status) {
+                    alert("[" + status + "]   Ошибка при загрузке концептов![" + response + "]");
                 }
             )
         }
 
         //Обработка отправки концепта
         $scope.cncptgo = function (concept) {
-            if ($scope.cncptsbm == "Добавить") {
-                if (concept.FName != "" && concept.FName != null) {
+            if ($scope.cncptsbm == "ADD_BTN") {
+                if (concept.FName != {} && concept.FName != null) {
                     $scope.cncptcreate(concept);
                 }
             } else {
-                $scope.cncptsbm = "Добавить";
+                $scope.cncptsbm = "ADD_BTN";
                 $scope.cncptupdate(concept);
             }
         }
 
         //Добавить концепт
         $scope.cncptcreate = function (concept) {
-
-            $http.post("/dictionary/json/newconcept", concept)
-                .success(function (data) {
+            $http.post("/ikra/json/newconcept", concept).then(
+                function (response) {
                     $scope.getConcepts($scope.ctgSelect);
                     $scope.alertzone = "Добавили концепт " + concept.FName;
-                }).error(function (data, status) {
-                    $scope.alertzone = "[" + status + "] Ошибка добавления концепта :( [" + data + "]";
-                });
+                },
+                function (response, status) {
+                    $scope.alertzone = "[" + status + "] Ошибка добавления концепта :( [" + response + "]";
+                }
+            );
         }
 
         //Обновить концепт
         $scope.cncptupdate = function (concept) {
-            $http.put("/dictionary/json/concept/" + concept.ID, concept)
-                .success(function (data) {
+            $http.put("/ikra/json/concept/" + concept.ID, concept).then(
+                function (response) {
                     $scope.alertzone = "Обновили категорию " + concept.FName;
-                }).error(function (data, status) {
-                    $scope.alertzone = "[" + status + "] Ошибка обновления имени категории :( [" + data + "]";
-                });
+                },
+                function (response, status) {
+                    $scope.alertzone = "[" + status + "] Ошибка обновления имени категории :( [" + response + "]";
+                }
+            );
         }
 
         //Удалить концепт
         $scope.cncptdelete = function (concept) {
-            $http.delete("/dictionary/json/concept/" + concept.ID)
-                .success(function (data) {
+            $http.delete("/ikra/json/concept/" + concept.ID).then(
+                function (response) {
                     $scope.getConcepts($scope.ctgSelect);
                     $scope.alertzone = "Удалили концепт " + concept.FName;
-                }).error(function (data, status) {
-                    $scope.alertzone = "[" + status + "] Ошибка удаления концепта :( [" + data + "]";
-                });
+                },
+                function (response, status) {
+                    $scope.alertzone = "[" + status + "] Ошибка удаления концепта :( [" + response + "]";
+                }
+            );
         }
 
         //Редактировать концепт
         $scope.cncptedit = function (cncpt) {
             $scope.concept = cncpt;
-            $scope.cncptsbm = "Сохранить";
+            $scope.cncptsbm = "SAVE_BTN";
         }
 
-        /***************************************************************************************/
-        /********************************** Работа с эмоциями **********************************/
-        /***************************************************************************************/
-
-        //Получить данные по эмоциональным маркерам
-        $scope.getEmotions = function () {
-            $http.get("/dictionary/json/emotion").success(
-                function (data) {
-                    $scope.emotions = data.children;
-                }
-            ).error(
-                function (data, status) {
-                    alert("[" + status + "]   Ошибка при загрузке эмоциональных маркеров![" + data + "]");
-                }
-            )
-        }
-
-        //Обработка отправки эмоционального маркера
-        $scope.emtgo = function (emotion) {
-            if ($scope.emtsbm == "Добавить") {
-                if (emotion.EName != "" && emotion.EName != null) {
-                    $scope.emtcreate(emotion);
-                }
-            } else {
-                $scope.emtsbm = "Добавить";
-                $scope.emtupdate(emotion);
-            }
-        }
-
-        //Добавить эмоциональный маркер
-        $scope.emtcreate = function (emotion) {
-            $http.post("/dictionary/json/newemotion", emotion)
-                .success(function (data) {
-                    $scope.getEmotions();
-                    $scope.alertzone = "Добавили концепт " + emotion.EName;
-                }).error(function (data, status) {
-                    $scope.alertzone = "[" + status + "] Ошибка добавления эмоциональных маркеров :( [" + data + "]";
-                });
-        }
-
-        //Обновить эмоциональный маркер
-        $scope.emtupdate = function (emotion) {
-            $http.put("/dictionary/json/emotion/" + emotion.ID, emotion)
-                .success(function (data) {
-                    $scope.alertzone = "Обновили эмоциональный маркер " + emotion.EName;
-                }).error(function (data, status) {
-                    $scope.alertzone = "[" + status + "] Ошибка обновления имени категории :( [" + data + "]";
-                });
-        }
-
-        //Удалить эмоциональный маркер
-        $scope.emtdelete = function (emotion) {
-            $http.delete("/dictionary/json/emotion/" + emotion.ID)
-                .success(function (data) {
-                    $scope.getEmotions();
-                    $scope.alertzone = "Удалили эмоциональный маркер " + emotion.EName;
-                }).error(function (data, status) {
-                    $scope.alertzone = "[" + status + "] Ошибка удаления эмоционального маркера :( [" + data + "]";
-                });
-        }
-
-        //Редактировать эмоциональный маркер
-        $scope.emtedit = function (emt) {
-            $scope.emotion = emt;
-            $scope.emtsbm = "Сохранить";
-        }
+//        /***************************************************************************************/
+//        /********************************** Работа с эмоциями **********************************/
+//        /***************************************************************************************/
+//
+//        //Получить данные по эмоциональным маркерам
+//        $scope.getEmotions = function () {
+//            $http.get("/ikra/json/emotion").success(
+//                function (data) {
+//                    $scope.emotions = data.children;
+//                }
+//            ).error(
+//                function (data, status) {
+//                    alert("[" + status + "]   Ошибка при загрузке эмоциональных маркеров![" + data + "]");
+//                }
+//            )
+//        }
+//
+//        //Обработка отправки эмоционального маркера
+//        $scope.emtgo = function (emotion) {
+//            if ($scope.emtsbm == "Добавить") {
+//                if (emotion.EName != {} && emotion.EName != null) {
+//                    $scope.emtcreate(emotion);
+//                }
+//            } else {
+//                $scope.emtsbm = "Добавить";
+//                $scope.emtupdate(emotion);
+//            }
+//        }
+//
+//        //Добавить эмоциональный маркер
+//        $scope.emtcreate = function (emotion) {
+//            $http.post("/ikra/json/newemotion", emotion)
+//                .success(function (data) {
+//                    $scope.getEmotions();
+//                    $scope.alertzone = "Добавили концепт " + emotion.EName;
+//                }).error(function (data, status) {
+//                    $scope.alertzone = "[" + status + "] Ошибка добавления эмоциональных маркеров :( [" + data + "]";
+//                });
+//        }
+//
+//        //Обновить эмоциональный маркер
+//        $scope.emtupdate = function (emotion) {
+//            $http.put("/ikra/json/emotion/" + emotion.ID, emotion)
+//                .success(function (data) {
+//                    $scope.alertzone = "Обновили эмоциональный маркер " + emotion.EName;
+//                }).error(function (data, status) {
+//                    $scope.alertzone = "[" + status + "] Ошибка обновления имени категории :( [" + data + "]";
+//                });
+//        }
+//
+//        //Удалить эмоциональный маркер
+//        $scope.emtdelete = function (emotion) {
+//            $http.delete("/ikra/json/emotion/" + emotion.ID)
+//                .success(function (data) {
+//                    $scope.getEmotions();
+//                    $scope.alertzone = "Удалили эмоциональный маркер " + emotion.EName;
+//                }).error(function (data, status) {
+//                    $scope.alertzone = "[" + status + "] Ошибка удаления эмоционального маркера :( [" + data + "]";
+//                });
+//        }
+//
+//        //Редактировать эмоциональный маркер
+//        $scope.emtedit = function (emt) {
+//            $scope.emotion = emt;
+//            $scope.emtsbm = "Сохранить";
+//        }
 
         /***************************************************************************************/
         /********************************** Работа с файлами ***********************************/
@@ -220,9 +344,9 @@ function ctrl($scope, $http) {
             var files = document.getElementById('iduplfile').files;
             var uploadUrl = "";
             if ($scope.dictSelect == "uplFunctional") {
-                uploadUrl = "/dictionary/uploadF";
+                uploadUrl = "/ikra/uploadF";
             } else {
-                uploadUrl = "/dictionary/uploadE";
+                uploadUrl = "/ikra/uploadE";
             }
             var fd = new FormData();
             fd.append("file", files[0]);
@@ -233,28 +357,29 @@ function ctrl($scope, $http) {
                         'Content-Type': undefined
                     },
                     transformRequest: angular.identity
-                })
-                .success(function (data) {
-                    console.log('Загружен');
-                    document.getElementById('uplstat').innerHTML = 'Успешная загрузка файла!';
-                }).error(function (data, status) {
-                    console.log(data);
-                    document.getElementById('uplstat').innerHTML = 'Ошибка загрузки файла!';
-                });
+                }).then(
+                    function (response) {
+                        console.log('Загружен');
+                        document.getElementById('uplstat').innerHTML = 'Успешная загрузка файла!';
+                    },
+                    function (response, status) {
+                        console.log(response);
+                        document.getElementById('uplstat').innerHTML = 'Ошибка загрузки файла!';
+                    }
+                );
         }
 
         $scope.downloadFile = function (df) {
-            var url = df == "F" ? "/dictionary/downloadF" : "/dictionary/downloadE";
-            $http.get(url).success(
-                function (data) {
-                    console.log(data);
+            var url = df == "F" ? "/ikra/downloadF" : "/ikra/downloadE";
+            $http.get(url).then(
+                function (response) {
+                    console.log(response);
                     var link = document.createElement('a');
-                    link.setAttribute('href', data);
+                    link.setAttribute('href', response);
                     link.setAttribute('download', 'download');
                     onload = link.click();
-                }
-            ).error(
-                function (data, status) {
+                },
+                function (response, status) {
                     console.log('Провал');
                 }
             )
@@ -266,16 +391,15 @@ function ctrl($scope, $http) {
 
 	//Получить данные по доменам
         $scope.getDomains = function () {
-            $http.get("/dictionary/json/domains").success(
-                function (data) {
-                    $scope.domains = data.children;
-		    //$scope.domName = data.children[0]["dmnName"];
-		    $scope.dmnSelect = data.children[0]["ID"];
-             console.log(data.children);       
-                }
-            ).error(
-                function (data, status) {
-                    alert("[" + status + "]   Ошибка при загрузке категорий![" + data + "]");
+            $http.get("/ikra/json/domains").then(
+                function (response) {
+                    console.log(response);
+                    $scope.domains = response.data.children;
+		    $scope.dmnSelect = response.data.children[0]["ID"];
+             console.log(response.data.children);       
+                },
+                function (response, status) {
+                    $scope.alertzone = "[" + status + "]   Ошибка при загрузке доменов![" + response + "]";
                 }
             )
         }
@@ -285,13 +409,15 @@ function ctrl($scope, $http) {
 	    console.log($scope.domName);
 	    if ($scope.domName.length > 0 && $scope.cmp == "Выполнить расчет") {
 		$scope.cmp="Ожидайте окончания расчета";
-		$http.post("/dictionary/json/compute/" + $scope.domName, "")
-                .success(function (data) {
+		$http.post("/ikra/json/compute/" + $scope.domName, "").then(
+            function (response) {
                     console.log("Расчет запущен");
-		    $scope.cmp = "Выполнить расчет";
-                }).error(function (data, status) {
-                    $scope.alertzone = "[" + status + "] Ошибка отправки запроса расчета :( [" + data + "]";
-                });
+		            $scope.cmp = "Выполнить расчет";
+            },
+            function (response, status) {
+                $scope.alertzone = "[" + status + "] Ошибка отправки запроса расчета :( [" + response + "]";
+            }
+        );
 	    }
         }
 
@@ -308,25 +434,36 @@ function ctrl($scope, $http) {
 }
 ])
 
-.config(function ($routeProvider) {
+.config(function($routeProvider) {
     $routeProvider.when('/category', {
         templateUrl: 'views/category.html',
         controller: 'ctrl'
-    });
-    $routeProvider.when('/concept', {
+    })
+    .when('/concept', {
         templateUrl: 'views/concept.html',
         controller: 'ctrl'
-    });
-    $routeProvider.when('/emotion', {
+    })
+    .when('/emotion', {
         templateUrl: 'views/emotion.html',
-        controller: 'ctrl'
-    });
-    $routeProvider.when('/upload', {
+        controller: 'emotionCtrl'
+    })
+    .when('/upload', {
         templateUrl: 'views/upload.html',
         controller: 'ctrl'
-    });
-    $routeProvider.when('/domain', {
+    })
+    .when('/domain', {
         templateUrl: 'views/domain.html',
         controller: 'ctrl'
     });
-});
+})
+
+.config(['$locationProvider', function($locationProvider) {
+  $locationProvider.hashPrefix('');
+}])
+
+.config(['$translateProvider', function($translateProvider) {
+    $translateProvider.translations('en', translationsEN);
+    $translateProvider.translations('ru', translationsRU);
+    $translateProvider.preferredLanguage('ru');
+    $translateProvider.fallbackLanguage('ru');
+}]);

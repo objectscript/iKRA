@@ -1,27 +1,27 @@
-﻿<html lang="ru">
-<div ng-controller="ctrl" ng-init="getCategories(); concept.FName=''; cncptsbm='Добавить';">
+<html lang="ru">
+<div ng-controller="ctrl" ng-init="getCategories(); concept.FName=''; cncptsbm='ADD_BTN';">
     <div class="container" align="center" style="border: solid gray 1px; border-radius: 10px; background-color: aliceblue; box-shadow: 0px 0px 3px 0px;">
 		
-        <h2>Концепты</h2>
+        <h2>{{'CONCEPTS.HEAD'|translate}}</h2>
 
         <br>
 
         <div class="row">
-            <form class="form-horizontal" role="form" ng-model="concept" ng-submit="concept.CtgID=ctgSelect; cncptgo(concept); concept=''; concept.FName='';">
+            <form class="form-horizontal" role="form" ng-model="concept" ng-submit="concept.CtgID=ctgSelect; cncptgo(concept); concept={}; concept.FName='';">
                 <div class="form-group">
-                    <label class="col-xs-2 control-label">Категория</label>
+                    <label class="col-xs-2 control-label">{{'CONCEPTS.CATEGORY'|translate}}</label>
                     <div class="col-xs-9 center-block">
                         <select class="form-control" ng-model="ctgSelect" ng-change="getConcepts(ctgSelect);" ng-options="ctg.ID as ctg.CtgName for ctg in categories">
                         </select>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-xs-2 control-label">Концепт</label>
+                    <label class="col-xs-2 control-label">{{'CONCEPTS.CONCEPT'|translate}}</label>
                     <div class="col-xs-8 center-block">
                         <input type="concept" class="form-control" ng-model="concept.FName" placeholder="Введите наименование концепта">
                     </div>
                     <div class="col-xs-1">
-                        <button type="submit" class="btn btn-default ">{{cncptsbm}}</button>
+                        <button type="submit" class="btn btn-default ">{{'CONCEPTS.'+cncptsbm|translate}}</button>
                     </div>
                 </div>
             </form>

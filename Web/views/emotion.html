@@ -1,15 +1,15 @@
-﻿<html lang="ru">
-<div ng-controller="ctrl" ng-init="getEmotions(); emotion.EValue=1; emotion.EName=''; emtsbm='Добавить';">
+<html lang="ru">
+<div ng-controller="emotionCtrl" ng-init="getEmotions(); emotion.EValue=1; emotion.EName=''; emtsbm='ADD_BTN';">
     <div class="container frm" align="center" style="border: solid gray 1px; border-radius: 10px; background-color: aliceblue; box-shadow: 0px 0px 3px 0px;">
 
-        <h2>Эмоциональные маркеры</h2>
+        <h2>{{'E_MARKERS.HEAD'|translate}}</h2>
 
         <br>
 
         <div class="row">
-            <form class="form-horizontal" role="form" ng-submit="emtgo(emotion); emotion=''; emotion.EValue=1; emotion.EName='';">
+            <form class="form-horizontal" role="form" ng-submit="emtgo(emotion); emotion={}; emotion.EValue=1; emotion.EName='';">
                 <div class="form-group">
-                    <label class="col-xs-1 col-xs-offset-1 control-label">Маркер</label>
+                    <label class="col-xs-1 col-xs-offset-1 control-label">{{'E_MARKERS.E_MARKER'|translate}}</label>
                     <div class="col-xs-1 center-block">
                         <input type="number" class="form-control" ng-model="emotion.EValue" value="1" min="-1" max="1" step="2">
                     </div>
@@ -17,7 +17,7 @@
                         <input type="emarker" class="form-control" ng-model="emotion.EName" placeholder="Введите наименование маркера">
                     </div>
                     <div class="col-xs-1">
-                        <button type="submit" class="btn btn-default">{{emtsbm}}</button>
+                        <button type="submit" class="btn btn-default">{{'E_MARKERS.'+emtsbm|translate}}</button>
                     </div>
                 </div>
             </form>

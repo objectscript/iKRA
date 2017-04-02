@@ -1,8 +1,8 @@
-﻿<html lang="ru">
+<html lang="ru">
 <div ng-controller="ctrl">
     <div class="container" align="center" style="border: solid gray 1px; border-radius: 10px; background-color: aliceblue; box-shadow: 0px 0px 3px 0px;">
 		
-        <h2>Домены</h2>
+        <h2>{{'DOMAINS.HEAD'|translate}}</h2>
 
         <br>
 
@@ -10,7 +10,7 @@
             <form class="form-horizontal" role="form" ng-model="domain" ng-submit="compute();">
 
                 <div class="form-group">
-                    <label class="col-xs-2 control-label">Домен</label>
+                    <label class="col-xs-2 control-label">{{'DOMAINS.DOMAIN'|translate}}</label>
                     <div class="col-xs-9 center-block">
                         <select class="form-control" ng-model="dmnSelect" ng-change="setDomName(dmnSelect);" ng-options="dmn.ID as dmn.dmnName for dmn in domains">
                         </select>
@@ -18,7 +18,7 @@
                 </div>
 
                 <div class="form-group">
-                    <button type="submit" class="btn btn-default">{{cmp}}</button>
+                    <button type="submit" class="btn btn-default">{{'DOMAINS.CALCULATE_BTN'|translate}}</button>
                 </div>
 
             </form>

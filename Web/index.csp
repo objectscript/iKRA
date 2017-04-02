@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+	<title>iKRA</title>
+	
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="node_modules/flag-icon-css/css/flag-icon.min.css">
+	
+	<script src="node_modules/angular/angular.min.js"></script>
+	<script src="node_modules/angular-route/angular-route.min.js"></script>
+	<script src="node_modules/angular-translate/dist/angular-translate.min.js"></script>
+	
+	<script src="js/model.js"></script>
+	<script src="js/controllers/emotion.js"></script>
+	
+</head>
+
+<body ng-app="app" ng-controller="ctrl">
+
+	<!-- Меню страницы -->
+	<div class="container" align="center" ng-init="getDomains();">
+        <h1>iKRA</h1>
+        <div class="navbar navbar-inverse row" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse" style="height: 1px;">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="" class="dropdown-toggle" data-toggle="dropdown">{{'MAIN_MENU.F_MARKERS.HEAD'|translate}}<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#/category">{{'MAIN_MENU.F_MARKERS.CATEGORIES'|translate}}</a></li>
+                                <li><a href="#/concept">{{'MAIN_MENU.F_MARKERS.CONCEPTS'|translate}}</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#/emotion">{{'MAIN_MENU.E_MARKERS'|translate}}</a></li>
+                        <li><a href="#/upload">{{'MAIN_MENU.UPLOAD'|translate}}</a></li>
+                        <li class="dropdown">
+                            <a href="" class="dropdown-toggle" data-toggle="dropdown">{{'MAIN_MENU.DOWNLOAD.HEAD'|translate}}<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li ng-click="downloadFile('F');"><a>{{'MAIN_MENU.DOWNLOAD.F_MARKERS'|translate}}</a></li>
+                                <li ng-click="downloadFile('E');"><a>{{'MAIN_MENU.DOWNLOAD.E_MARKERS'|translate}}</a></li>
+                            </ul>
+                        </li>
+			<li><a href="#/domain">{{'MAIN_MENU.DOMAINS'|translate}}</a></li>
+			<li><a href="http://176.112.201.41:57772/deepseeweb/index.html#/d/Phones/IKRAPanel01.dashboard?ns=IKRA" target="_blank">{{'MAIN_MENU.GRAPH'|translate}}</a></li>
+                    </ul>
+                    
+            <ul class="nav navbar-nav navbar-right">
+            	<li class="dropdown">
+					<a href="" class="dropdown-toggle" data-toggle="dropdown">{{'MAIN_MENU.CHANGE_LANG'|translate}}: {{langKey}}<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li ng-click="changeLanguage('ru')"><a><span class="flag-icon flag-icon-ru"></span>{{'MAIN_MENU.SELECT_LANG_RU'|translate}}</a></li>
+                        <li ng-click="changeLanguage('en')"><a><span class="flag-icon flag-icon-us"></span>{{'MAIN_MENU.SELECT_LANG_EN'|translate}}</a></li>
+                    </ul>
+                </li>
+                <li><a>{{'MAIN_MENU.USER'|translate}}: #(..GetNm())#</a></li>
+            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<div ng-view></div>
+
+	<script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    
+</body>
+
+<script language="Cache" method="GetNm" arguments="" returntype="%String">
+    New uname
+    Set uname = %session.Username
+    Quit uname
+</script>
+
+</html>

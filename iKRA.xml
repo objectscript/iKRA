@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Export generator="Cache" version="25" zv="Cache for UNIX (Red Hat Enterprise Linux for x86-64) 2015.3 (Build 259U)" ts="2016-07-27 17:22:22">
+<Export generator="Cache" version="25" zv="Cache for Windows (x86-64) 2016.1 (Build 617U)" ts="2017-04-02 20:54:45">
 <Class name="ikra.Dictionary.Category">
 <Super>%Persistent</Super>
 <TimeChanged>63899,74282.76398</TimeChanged>
@@ -135,12 +135,12 @@
 
 <Class name="ikra.Dictionary.Load">
 <Super>%Persistent</Super>
-<TimeChanged>63937,69001.256365</TimeChanged>
+<TimeChanged>64316,3304.168117</TimeChanged>
 <TimeCreated>63897,44888.806336</TimeCreated>
 
 <Method name="LoadFunctional">
 <ClassMethod>1</ClassMethod>
-<FormalSpec>sFolder:%String="/tmp/Load/Fmarkers.txt"</FormalSpec>
+<FormalSpec>sFolder:%String="C:\InterSystems\Cache\CSP\ikra\Load\Fmarkers.txt"</FormalSpec>
 <Implementation><![CDATA[
 	set cid = 0
 	set stream = ##class(%Stream.FileCharacter).%New()
@@ -162,7 +162,7 @@
 
 <Method name="LoadEmotion">
 <ClassMethod>1</ClassMethod>
-<FormalSpec>sFolder:%String="/tmp/Load/Emarkers.txt"</FormalSpec>
+<FormalSpec>sFolder:%String="C:\InterSystems\Cache\CSP\ikra\Load\Emarkers.txt"</FormalSpec>
 <Implementation><![CDATA[
 	set stream = ##class(%Stream.FileCharacter).%New()
 	set sc = stream.LinkToFile(sFolder)
@@ -513,7 +513,7 @@ Method of deleting a domain with all environment</Description>
 
 <Class name="ikra.Phones.Loader">
 <IncludeCode>%IKPublic</IncludeCode>
-<TimeChanged>64126,56936.250374</TimeChanged>
+<TimeChanged>64374,61806.272129</TimeChanged>
 <TimeCreated>63702,54395.292655</TimeCreated>
 
 <Method name="Load">
@@ -523,7 +523,7 @@ domName - Domain name.
 domFolder - folder for creating a configuration.. Contains dictionaries, blacklists, etc.
 For example, with call: do ##class(ikra.Phones.loader).Load("Phone", "D:\intuersystems\wPhones")</Description>
 <ClassMethod>1</ClassMethod>
-<FormalSpec>domName:%String="ph_test",domFolder:%String="/tmp/Load/"</FormalSpec>
+<FormalSpec>domName:%String="Phones",domFolder:%String="C:\InterSystems\Cache\CSP\ikra\Load\"</FormalSpec>
 <ReturnType>%Status</ReturnType>
 <Implementation><![CDATA[
 	write "Loading started at: ", $zdatetime($horolog), !
@@ -689,7 +689,7 @@ domName - Domain name</Description>
 <Description>
 Method of deleting a domain with all environment</Description>
 <ClassMethod>1</ClassMethod>
-<FormalSpec>domName:%String</FormalSpec>
+<FormalSpec>domName:%String="Phones"</FormalSpec>
 <ReturnType>%Status</ReturnType>
 <Implementation><![CDATA[
 	kill ^ikraDomainFolder(domName)
@@ -1131,7 +1131,7 @@ writeToFile - filename to write a full list of similar terms. If writeToFile = "
 <Class name="ikra.Phones.Processing.Processing">
 <IncludeCode>%IKPublic</IncludeCode>
 <Super>%RegisteredObject</Super>
-<TimeChanged>64126,45864.870653</TimeChanged>
+<TimeChanged>64374,61986.001173</TimeChanged>
 <TimeCreated>63703,51656.851126</TimeCreated>
 
 <Method name="Start">
@@ -1156,7 +1156,7 @@ writeToFile - filename to write a full list of similar terms. If writeToFile = "
 		do streamIn.WriteLine("MAXSENTENCELENGTHTORETURN = 15")	
 		do streamIn.WriteLine("CALCALGORITHM = SENTENCE")	
 		do streamIn.WriteLine("NEGATION = EXCLUDE")
-		do streamIn.WriteLine("GRADEMULTIPLIER = 5")
+		do streamIn.WriteLine("GRADEMULTIPLIER = 10")
 		do streamIn.WriteLine("GRADESUSPECTDIFF = 1")
 		
 		do streamIn.%Save()
@@ -1247,12 +1247,12 @@ writeToFile - filename to write a full list of similar terms. If writeToFile = "
 	
 	if '($data(^preferences("GRADEMULTIPLIER"))) {
 		write "There is no GRADEMULTIPLIER parameter. Use default settings: 5.", !
-		set ^preferences("GRADEMULTIPLIER") = 5	
+		set ^preferences("GRADEMULTIPLIER") = 10	
 	}
 	else {
 		if '($ISVALIDNUM(^preferences("GRADEMULTIPLIER"))) {
 			write "GRADEMULTIPLIER is not valid number. Use default settings: 5.", !
-			set ^preferences("GRADEMULTIPLIER") = 5
+			set ^preferences("GRADEMULTIPLIER") = 10
 		}     
 	}	
 	
@@ -3106,7 +3106,7 @@ Negative emotional saturation of the review.</Description>
 
 <Class name="ikra.REST.JSON">
 <Super>%Base</Super>
-<TimeChanged>64113,64186.864909</TimeChanged>
+<TimeChanged>64353,60438.162658</TimeChanged>
 <TimeCreated>63897,67180.001599</TimeCreated>
 
 <UDLText name="T">
@@ -3455,7 +3455,7 @@ Negative emotional saturation of the review.</Description>
 <ReturnType>%Status</ReturnType>
 <Implementation><![CDATA[
    set st=$$$OK
-   set sFolder = "/InterSystems/Cache/csp/default/files/emotion.txt"
+   set sFolder = "C:\InterSystems\Cache\CSP\ikra\files\emotion.txt"
    set stream = ##class(%Stream.FileCharacter).%New()
    set sc = stream.LinkToFile(sFolder)
    
@@ -3486,7 +3486,7 @@ Negative emotional saturation of the review.</Description>
 <ReturnType>%Status</ReturnType>
 <Implementation><![CDATA[
    set st=$$$OK
-   set sFolder = "/InterSystems/Cache/csp/default/files/functional.txt"
+   set sFolder = "C:\InterSystems\Cache\CSP\ikra\files\functional.txt"
    set stream = ##class(%Stream.FileCharacter).%New()
    set sc = stream.LinkToFile(sFolder)
    
@@ -3538,9 +3538,9 @@ Negative emotional saturation of the review.</Description>
 <ClassMethod>1</ClassMethod>
 <ReturnType>%Status</ReturnType>
 <Implementation><![CDATA[
-   set st=$$$OK
-   set ^tcnt = ^tcnt + 1
-   set ^tlog(^tcnt) = "+"
+   set st = $$$OK
+   //set ^tcnt = ^tcnt + 1
+   //set ^tlog(^tcnt) = "+"
    
    set statement=##class(%SQL.Statement).%New()
    set status=statement.%PrepareClassQuery("%iKnow.Domain","GetAllDomains")
@@ -3550,7 +3550,7 @@ Negative emotional saturation of the review.</Description>
    do ##class(ikra.Dictionary.Domains).%KillExtent()
    while resultset.%Next() {
 	   set dName = resultset.%Get("domainName")
-	   set ^tlog(^tcnt) = ^tlog(^tcnt)_" "_dName
+	   //set ^tlog(^tcnt) = ^tlog(^tcnt)_" "_dName
 	   &sql(INSERT INTO ikra_Dictionary.Domains(dmnName) VALUES(:dName))
 	}
    
